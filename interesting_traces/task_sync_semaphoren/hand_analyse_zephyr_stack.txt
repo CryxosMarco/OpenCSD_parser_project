@@ -1,0 +1,52 @@
+-----------------------
+// Seltsamer erster Auftritt von writer_task2 
+writer_task2
+tm_pmu_profile_start
+tm_pmu_profile_end
+tm_semaphore_wait
+z_pend_curr
+z_impl_k_sem_take
+writer_task1
+tm_pmu_profile_end
+-----------------------
+writer_task2
+tm_pmu_profile_start
+tm_semaphore_put
+z_impl_k_sem_give
+z_abort_timeout
+z_ready_thread
+ready_thread            ziemlich lange funktion
+z_reschedule
+tm_semaphore_wait
+z_impl_k_sem_take
+z_pend_curr             schaltet interrupt ab
+add_to_waitq_locked
+unready_thread
+add_to_waitq_locked
+z_arm_cortex_r_svc
+z_arm_svc
+_context_switch
+z_arm_do_swap
+z_arm_int_exit
+__EXIT_INT              schaltet interrupt ein
+writer_task1
+tm_pmu_profile_end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
