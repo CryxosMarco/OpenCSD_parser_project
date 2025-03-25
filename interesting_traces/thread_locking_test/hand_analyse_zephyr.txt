@@ -1,0 +1,9 @@
+Execution order:
+Enter tm_thread_locking_benchmark_thread
+Enter tm_pmu_profile_start
+Exit tm_pmu_profile_start
+Enter k_sched_lock
+Exit k_sched_lock
+Enter k_sched_unlock
+Exit k_sched_unlock
+Exit tm_thread_locking_benchmark_thread

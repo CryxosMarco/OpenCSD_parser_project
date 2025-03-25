@@ -1,0 +1,1678 @@
+P_HDR Event: Idx:65286 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78c8: eb05 1000    	add.w	r0, r5, r0, lsl #4
+  2. 700a78cc: f008 f8e8    	bl	0x700afaa0 <tm_pmu_profile_start> @ imm = #0x81d0
+  3. 700afaa0: f7f9 bc4e    	b.w	0x700a9340 <PMU_profileStart> @ imm = #-0x6764
+  4. 700a9340: b580         	push	{r7, lr}
+  5. 700a9342: b088         	sub	sp, #0x20
+  6. 700a9344: 9006         	str	r0, [sp, #0x18]
+  7. 700a9346: f243 0080    	movw	r0, #0x3080
+  8. 700a934a: f2c7 0008    	movt	r0, #0x7008
+  9. 700a934e: 6800         	ldr	r0, [r0]
+  10. 700a9350: 2840         	cmp	r0, #0x40
+  11. 700a9352: d304         	blo	0x700a935e <PMU_profileStart+0x1e> @ imm = #0x8
+  12. 700a935e: f243 0280    	movw	r2, #0x3080
+  13. 700a9362: f2c7 0208    	movt	r2, #0x7008
+  14. 700a9366: 6810         	ldr	r0, [r2]
+  15. 700a9368: 9005         	str	r0, [sp, #0x14]
+
+P_HDR Event: Idx:65287 (Pattern: EEEEEEEEEEEEEEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a936a: 6890         	ldr	r0, [r2, #0x8]
+  2. 700a936c: 9003         	str	r0, [sp, #0xc]
+  3. 700a936e: 6850         	ldr	r0, [r2, #0x4]
+  4. 700a9370: 9002         	str	r0, [sp, #0x8]
+  5. 700a9372: 9805         	ldr	r0, [sp, #0x14]
+  6. 700a9374: 2134         	movs	r1, #0x34
+  7. 700a9376: fb00 2001    	mla	r0, r0, r1, r2
+  8. 700a937a: 300c         	adds	r0, #0xc
+  9. 700a937c: 9001         	str	r0, [sp, #0x4]
+  10. 700a937e: 9806         	ldr	r0, [sp, #0x18]
+  11. 700a9380: 9901         	ldr	r1, [sp, #0x4]
+  12. 700a9382: 6308         	str	r0, [r1, #0x30]
+  13. 700a9384: f006 fae4    	bl	0x700af950 <PMU_resetCounters> @ imm = #0x65c8
+  14. 700af950: b580         	push	{r7, lr}
+  15. 700af952: f7f2 eb88    	blx	0x700a2064 <CSL_armR5PmuResetCycleCnt> @ imm = #-0xd8f0
+
+Sync: Idx:65288; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A2064 ~[0x700A2064]; ISA=ARM(32);
+
+P_HDR Event: Idx:65293 (Pattern: EEEE, Function: CSL_armR5PmuResetCycleCnt)
+Executed Assembly Steps:
+  1. 700a2064: ee190f1c     	mrc	p15, #0x0, r0, c9, c12, #0x0
+  2. 700a2068: e3800004     	orr	r0, r0, #4
+  3. 700a206c: ee090f1c     	mcr	p15, #0x0, r0, c9, c12, #0x0
+  4. 700a2070: e12fff1e     	bx	lr
+
+Sync: Idx:65294; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AF956 ~[0x700AF956]; ISA=Thumb2;
+
+P_HDR Event: Idx:65300 (Pattern: E, Function: PMU_resetCounters)
+Executed Assembly Steps:
+  1. 700af956: f7f2 eb8e    	blx	0x700a2074 <CSL_armR5PmuResetCntrs> @ imm = #-0xd8e4
+
+Sync: Idx:65301; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A2074 ~[0x700A2074]; ISA=ARM(32);
+
+P_HDR Event: Idx:65306 (Pattern: EEEE, Function: CSL_armR5PmuResetCntrs)
+Executed Assembly Steps:
+  1. 700a2074: ee190f1c     	mrc	p15, #0x0, r0, c9, c12, #0x0
+  2. 700a2078: e3800002     	orr	r0, r0, #2
+  3. 700a207c: ee090f1c     	mcr	p15, #0x0, r0, c9, c12, #0x0
+  4. 700a2080: e12fff1e     	bx	lr
+
+Sync: Idx:65307; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AF95A ~[0x700AF95A]; ISA=Thumb2;
+
+P_HDR Event: Idx:65313 (Pattern: E, Function: PMU_resetCounters)
+Executed Assembly Steps:
+  1. 700af95a: bd80         	pop	{r7, pc}
+
+Sync: Idx:65314; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A9388 ~[0xA9388];
+
+P_HDR Event: Idx:65317 (Pattern: EEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a9388: 9802         	ldr	r0, [sp, #0x8]
+  2. 700a938a: 2801         	cmp	r0, #0x1
+  3. 700a938c: d106         	bne	0x700a939c <PMU_profileStart+0x5c> @ imm = #0xc
+
+P_HDR Event: Idx:65318 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a938e: e7ff         	b	0x700a9390 <PMU_profileStart+0x50> @ imm = #-0x2
+  2. 700a9390: 201f         	movs	r0, #0x1f
+  3. 700a9392: f7f8 ee3c    	blx	0x700a200c <CSL_armR5PmuReadCntr> @ imm = #-0x7388
+
+Sync: Idx:65319; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A200C ~[0x700A200C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65324 (Pattern: EEEEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a200c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a2010: e350001f     	cmp	r0, #31
+  3. 700a2014: 0a000002     	beq	0x700a2024 <armR5PmuReadCntr_cycles> @ imm = #0x8
+  4. 700a2024: ee190f1d     	mrc	p15, #0x0, r0, c9, c13, #0x0
+  5. 700a2028: e49de004     	ldr	lr, [sp], #4
+  6. 700a202c: e12fff1e     	bx	lr
+
+Sync: Idx:65325; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A9396 ~[0x700A9396]; ISA=Thumb2;
+
+P_HDR Event: Idx:65331 (Pattern: EEEEEEEEEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a9396: 9901         	ldr	r1, [sp, #0x4]
+  2. 700a9398: 62c8         	str	r0, [r1, #0x2c]
+  3. 700a939a: e7ff         	b	0x700a939c <PMU_profileStart+0x5c> @ imm = #-0x2
+  4. 700a939c: 2000         	movs	r0, #0x0
+  5. 700a939e: 9004         	str	r0, [sp, #0x10]
+  6. 700a93a0: e7ff         	b	0x700a93a2 <PMU_profileStart+0x62> @ imm = #-0x2
+  7. 700a93a2: 9804         	ldr	r0, [sp, #0x10]
+  8. 700a93a4: 9903         	ldr	r1, [sp, #0xc]
+  9. 700a93a6: 4288         	cmp	r0, r1
+  10. 700a93a8: d20f         	bhs	0x700a93ca <PMU_profileStart+0x8a> @ imm = #0x1e
+
+P_HDR Event: Idx:65332 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a93aa: e7ff         	b	0x700a93ac <PMU_profileStart+0x6c> @ imm = #-0x2
+  2. 700a93ac: 9804         	ldr	r0, [sp, #0x10]
+  3. 700a93ae: f7f8 ee2e    	blx	0x700a200c <CSL_armR5PmuReadCntr> @ imm = #-0x73a4
+
+Sync: Idx:65333; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A200C ~[0x700A200C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65338 (Pattern: EEN, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a200c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a2010: e350001f     	cmp	r0, #31
+  3. 700a2014: 0a000002     	beq	0x700a2024 <armR5PmuReadCntr_cycles> @ imm = #0x8
+
+P_HDR Event: Idx:65339 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a2018: ebffffc5     	bl	0x700a1f34 <CSL_armR5PmuSelectCntr> @ imm = #-0xec
+  2. 700a1f34: e200001f     	and	r0, r0, #31
+  3. 700a1f38: ee090fbc     	mcr	p15, #0x0, r0, c9, c12, #0x5
+  4. 700a1f3c: e12fff1e     	bx	lr
+
+Sync: Idx:65340; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A201C ~[0x1C];
+
+P_HDR Event: Idx:65341 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a201c: ee190f5d     	mrc	p15, #0x0, r0, c9, c13, #0x2
+  2. 700a2020: ea000000     	b	0x700a2028 <armR5PmuReadCntr_00> @ imm = #0x0
+  3. 700a2028: e49de004     	ldr	lr, [sp], #4
+  4. 700a202c: e12fff1e     	bx	lr
+
+Sync: Idx:65342; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A93B2 ~[0x700A93B2]; ISA=Thumb2;
+
+P_HDR Event: Idx:65348 (Pattern: EEEEEEEEEEEEEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a93b2: 9901         	ldr	r1, [sp, #0x4]
+  2. 700a93b4: 9a04         	ldr	r2, [sp, #0x10]
+  3. 700a93b6: eb02 0242    	add.w	r2, r2, r2, lsl #1
+  4. 700a93ba: eb01 0182    	add.w	r1, r1, r2, lsl #2
+  5. 700a93be: 6088         	str	r0, [r1, #0x8]
+  6. 700a93c0: e7ff         	b	0x700a93c2 <PMU_profileStart+0x82> @ imm = #-0x2
+  7. 700a93c2: 9804         	ldr	r0, [sp, #0x10]
+  8. 700a93c4: 3001         	adds	r0, #0x1
+  9. 700a93c6: 9004         	str	r0, [sp, #0x10]
+  10. 700a93c8: e7eb         	b	0x700a93a2 <PMU_profileStart+0x62> @ imm = #-0x2a
+  11. 700a93a2: 9804         	ldr	r0, [sp, #0x10]
+  12. 700a93a4: 9903         	ldr	r1, [sp, #0xc]
+  13. 700a93a6: 4288         	cmp	r0, r1
+  14. 700a93a8: d20f         	bhs	0x700a93ca <PMU_profileStart+0x8a> @ imm = #0x1e
+
+P_HDR Event: Idx:65349 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a93aa: e7ff         	b	0x700a93ac <PMU_profileStart+0x6c> @ imm = #-0x2
+  2. 700a93ac: 9804         	ldr	r0, [sp, #0x10]
+  3. 700a93ae: f7f8 ee2e    	blx	0x700a200c <CSL_armR5PmuReadCntr> @ imm = #-0x73a4
+
+Sync: Idx:65350; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A200C ~[0x700A200C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65355 (Pattern: EEN, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a200c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a2010: e350001f     	cmp	r0, #31
+  3. 700a2014: 0a000002     	beq	0x700a2024 <armR5PmuReadCntr_cycles> @ imm = #0x8
+
+P_HDR Event: Idx:65356 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a2018: ebffffc5     	bl	0x700a1f34 <CSL_armR5PmuSelectCntr> @ imm = #-0xec
+  2. 700a1f34: e200001f     	and	r0, r0, #31
+  3. 700a1f38: ee090fbc     	mcr	p15, #0x0, r0, c9, c12, #0x5
+  4. 700a1f3c: e12fff1e     	bx	lr
+
+Sync: Idx:65357; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A201C ~[0x1C];
+
+P_HDR Event: Idx:65358 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a201c: ee190f5d     	mrc	p15, #0x0, r0, c9, c13, #0x2
+  2. 700a2020: ea000000     	b	0x700a2028 <armR5PmuReadCntr_00> @ imm = #0x0
+  3. 700a2028: e49de004     	ldr	lr, [sp], #4
+  4. 700a202c: e12fff1e     	bx	lr
+
+Sync: Idx:65360; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A93B2 ~[0x700A93B2]; ISA=Thumb2;
+
+P_HDR Event: Idx:65365 (Pattern: EEEEEEEEEEEEEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a93b2: 9901         	ldr	r1, [sp, #0x4]
+  2. 700a93b4: 9a04         	ldr	r2, [sp, #0x10]
+  3. 700a93b6: eb02 0242    	add.w	r2, r2, r2, lsl #1
+  4. 700a93ba: eb01 0182    	add.w	r1, r1, r2, lsl #2
+  5. 700a93be: 6088         	str	r0, [r1, #0x8]
+  6. 700a93c0: e7ff         	b	0x700a93c2 <PMU_profileStart+0x82> @ imm = #-0x2
+  7. 700a93c2: 9804         	ldr	r0, [sp, #0x10]
+  8. 700a93c4: 3001         	adds	r0, #0x1
+  9. 700a93c6: 9004         	str	r0, [sp, #0x10]
+  10. 700a93c8: e7eb         	b	0x700a93a2 <PMU_profileStart+0x62> @ imm = #-0x2a
+  11. 700a93a2: 9804         	ldr	r0, [sp, #0x10]
+  12. 700a93a4: 9903         	ldr	r1, [sp, #0xc]
+  13. 700a93a6: 4288         	cmp	r0, r1
+  14. 700a93a8: d20f         	bhs	0x700a93ca <PMU_profileStart+0x8a> @ imm = #0x1e
+
+P_HDR Event: Idx:65366 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a93aa: e7ff         	b	0x700a93ac <PMU_profileStart+0x6c> @ imm = #-0x2
+  2. 700a93ac: 9804         	ldr	r0, [sp, #0x10]
+  3. 700a93ae: f7f8 ee2e    	blx	0x700a200c <CSL_armR5PmuReadCntr> @ imm = #-0x73a4
+
+Sync: Idx:65367; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A200C ~[0x700A200C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65372 (Pattern: EEN, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a200c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a2010: e350001f     	cmp	r0, #31
+  3. 700a2014: 0a000002     	beq	0x700a2024 <armR5PmuReadCntr_cycles> @ imm = #0x8
+
+P_HDR Event: Idx:65373 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a2018: ebffffc5     	bl	0x700a1f34 <CSL_armR5PmuSelectCntr> @ imm = #-0xec
+  2. 700a1f34: e200001f     	and	r0, r0, #31
+  3. 700a1f38: ee090fbc     	mcr	p15, #0x0, r0, c9, c12, #0x5
+  4. 700a1f3c: e12fff1e     	bx	lr
+
+Sync: Idx:65374; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A201C ~[0x1C];
+
+P_HDR Event: Idx:65376 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a201c: ee190f5d     	mrc	p15, #0x0, r0, c9, c13, #0x2
+  2. 700a2020: ea000000     	b	0x700a2028 <armR5PmuReadCntr_00> @ imm = #0x0
+  3. 700a2028: e49de004     	ldr	lr, [sp], #4
+  4. 700a202c: e12fff1e     	bx	lr
+
+Sync: Idx:65377; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A93B2 ~[0x700A93B2]; ISA=Thumb2;
+
+P_HDR Event: Idx:65382 (Pattern: EEEEEEEEEEEEEEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a93b2: 9901         	ldr	r1, [sp, #0x4]
+  2. 700a93b4: 9a04         	ldr	r2, [sp, #0x10]
+  3. 700a93b6: eb02 0242    	add.w	r2, r2, r2, lsl #1
+  4. 700a93ba: eb01 0182    	add.w	r1, r1, r2, lsl #2
+  5. 700a93be: 6088         	str	r0, [r1, #0x8]
+  6. 700a93c0: e7ff         	b	0x700a93c2 <PMU_profileStart+0x82> @ imm = #-0x2
+  7. 700a93c2: 9804         	ldr	r0, [sp, #0x10]
+  8. 700a93c4: 3001         	adds	r0, #0x1
+  9. 700a93c6: 9004         	str	r0, [sp, #0x10]
+  10. 700a93c8: e7eb         	b	0x700a93a2 <PMU_profileStart+0x62> @ imm = #-0x2a
+  11. 700a93a2: 9804         	ldr	r0, [sp, #0x10]
+  12. 700a93a4: 9903         	ldr	r1, [sp, #0xc]
+  13. 700a93a6: 4288         	cmp	r0, r1
+  14. 700a93a8: d20f         	bhs	0x700a93ca <PMU_profileStart+0x8a> @ imm = #0x1e
+  15. 700a93ca: 2000         	movs	r0, #0x0
+
+P_HDR Event: Idx:65383 (Pattern: EEEEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700a93cc: 9007         	str	r0, [sp, #0x1c]
+  2. 700a93ce: e7ff         	b	0x700a93d0 <PMU_profileStart+0x90> @ imm = #-0x2
+  3. 700a93d0: 9807         	ldr	r0, [sp, #0x1c]
+  4. 700a93d2: b008         	add	sp, #0x20
+  5. 700a93d4: bd80         	pop	{r7, pc}
+
+Sync: Idx:65384; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A78D0 ~[0xA78D0];
+
+P_HDR Event: Idx:65387 (Pattern: EEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78d0: f008 f8f6    	bl	0x700afac0 <tm_suspend_scheduler> @ imm = #0x81ec
+  2. 700afac0: f7ff bef6    	b.w	0x700af8b0 <vTaskSuspendAll> @ imm = #-0x214
+  3. 700af8b0: f242 61e4    	movw	r1, #0x26e4
+  4. 700af8b4: f2c7 010b    	movt	r1, #0x700b
+  5. 700af8b8: 6808         	ldr	r0, [r1]
+  6. 700af8ba: 3001         	adds	r0, #0x1
+  7. 700af8bc: 6008         	str	r0, [r1]
+  8. 700af8be: 4770         	bx	lr
+
+Sync: Idx:65388; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A78D4 ~[0x54];
+
+P_HDR Event: Idx:65389 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78d4: 6820         	ldr	r0, [r4]
+  2. 700a78d6: 1c41         	adds	r1, r0, #0x1
+  3. 700a78d8: f44f 707a    	mov.w	r0, #0x3e8
+  4. 700a78dc: 6021         	str	r1, [r4]
+  5. 700a78de: bf00         	nop
+  6. 700a78e0: 3832         	subs	r0, #0x32
+  7. 700a78e2: bf00         	nop
+  8. 700a78e4: bf00         	nop
+  9. 700a78e6: bf00         	nop
+  10. 700a78e8: bf00         	nop
+  11. 700a78ea: bf00         	nop
+  12. 700a78ec: bf00         	nop
+  13. 700a78ee: bf00         	nop
+  14. 700a78f0: bf00         	nop
+  15. 700a78f2: bf00         	nop
+
+P_HDR Event: Idx:65390 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f4: bf00         	nop
+  2. 700a78f6: bf00         	nop
+  3. 700a78f8: bf00         	nop
+  4. 700a78fa: bf00         	nop
+  5. 700a78fc: bf00         	nop
+  6. 700a78fe: bf00         	nop
+  7. 700a7900: bf00         	nop
+  8. 700a7902: bf00         	nop
+  9. 700a7904: bf00         	nop
+  10. 700a7906: bf00         	nop
+  11. 700a7908: bf00         	nop
+  12. 700a790a: bf00         	nop
+  13. 700a790c: bf00         	nop
+  14. 700a790e: bf00         	nop
+  15. 700a7910: bf00         	nop
+
+P_HDR Event: Idx:65392 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7912: bf00         	nop
+  2. 700a7914: bf00         	nop
+  3. 700a7916: bf00         	nop
+  4. 700a7918: bf00         	nop
+  5. 700a791a: bf00         	nop
+  6. 700a791c: bf00         	nop
+  7. 700a791e: bf00         	nop
+  8. 700a7920: bf00         	nop
+  9. 700a7922: bf00         	nop
+  10. 700a7924: bf00         	nop
+  11. 700a7926: bf00         	nop
+  12. 700a7928: bf00         	nop
+  13. 700a792a: bf00         	nop
+  14. 700a792c: bf00         	nop
+  15. 700a792e: bf00         	nop
+
+P_HDR Event: Idx:65393 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7930: bf00         	nop
+  2. 700a7932: bf00         	nop
+  3. 700a7934: bf00         	nop
+  4. 700a7936: bf00         	nop
+  5. 700a7938: bf00         	nop
+  6. 700a793a: bf00         	nop
+  7. 700a793c: bf00         	nop
+  8. 700a793e: bf00         	nop
+  9. 700a7940: bf00         	nop
+  10. 700a7942: bf00         	nop
+  11. 700a7944: bf00         	nop
+  12. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  13. 700a78e0: 3832         	subs	r0, #0x32
+  14. 700a78e2: bf00         	nop
+  15. 700a78e4: bf00         	nop
+
+P_HDR Event: Idx:65394 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78e6: bf00         	nop
+  2. 700a78e8: bf00         	nop
+  3. 700a78ea: bf00         	nop
+  4. 700a78ec: bf00         	nop
+  5. 700a78ee: bf00         	nop
+  6. 700a78f0: bf00         	nop
+  7. 700a78f2: bf00         	nop
+  8. 700a78f4: bf00         	nop
+  9. 700a78f6: bf00         	nop
+  10. 700a78f8: bf00         	nop
+  11. 700a78fa: bf00         	nop
+  12. 700a78fc: bf00         	nop
+  13. 700a78fe: bf00         	nop
+  14. 700a7900: bf00         	nop
+  15. 700a7902: bf00         	nop
+
+P_HDR Event: Idx:65395 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7904: bf00         	nop
+  2. 700a7906: bf00         	nop
+  3. 700a7908: bf00         	nop
+  4. 700a790a: bf00         	nop
+  5. 700a790c: bf00         	nop
+  6. 700a790e: bf00         	nop
+  7. 700a7910: bf00         	nop
+  8. 700a7912: bf00         	nop
+  9. 700a7914: bf00         	nop
+  10. 700a7916: bf00         	nop
+  11. 700a7918: bf00         	nop
+  12. 700a791a: bf00         	nop
+  13. 700a791c: bf00         	nop
+  14. 700a791e: bf00         	nop
+  15. 700a7920: bf00         	nop
+
+P_HDR Event: Idx:65396 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7922: bf00         	nop
+  2. 700a7924: bf00         	nop
+  3. 700a7926: bf00         	nop
+  4. 700a7928: bf00         	nop
+  5. 700a792a: bf00         	nop
+  6. 700a792c: bf00         	nop
+  7. 700a792e: bf00         	nop
+  8. 700a7930: bf00         	nop
+  9. 700a7932: bf00         	nop
+  10. 700a7934: bf00         	nop
+  11. 700a7936: bf00         	nop
+  12. 700a7938: bf00         	nop
+  13. 700a793a: bf00         	nop
+  14. 700a793c: bf00         	nop
+  15. 700a793e: bf00         	nop
+
+P_HDR Event: Idx:65397 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7940: bf00         	nop
+  2. 700a7942: bf00         	nop
+  3. 700a7944: bf00         	nop
+  4. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  5. 700a78e0: 3832         	subs	r0, #0x32
+  6. 700a78e2: bf00         	nop
+  7. 700a78e4: bf00         	nop
+  8. 700a78e6: bf00         	nop
+  9. 700a78e8: bf00         	nop
+  10. 700a78ea: bf00         	nop
+  11. 700a78ec: bf00         	nop
+  12. 700a78ee: bf00         	nop
+  13. 700a78f0: bf00         	nop
+  14. 700a78f2: bf00         	nop
+  15. 700a78f4: bf00         	nop
+
+P_HDR Event: Idx:65398 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f6: bf00         	nop
+  2. 700a78f8: bf00         	nop
+  3. 700a78fa: bf00         	nop
+  4. 700a78fc: bf00         	nop
+  5. 700a78fe: bf00         	nop
+  6. 700a7900: bf00         	nop
+  7. 700a7902: bf00         	nop
+  8. 700a7904: bf00         	nop
+  9. 700a7906: bf00         	nop
+  10. 700a7908: bf00         	nop
+  11. 700a790a: bf00         	nop
+  12. 700a790c: bf00         	nop
+  13. 700a790e: bf00         	nop
+  14. 700a7910: bf00         	nop
+  15. 700a7912: bf00         	nop
+
+P_HDR Event: Idx:65399 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7914: bf00         	nop
+  2. 700a7916: bf00         	nop
+  3. 700a7918: bf00         	nop
+  4. 700a791a: bf00         	nop
+  5. 700a791c: bf00         	nop
+  6. 700a791e: bf00         	nop
+  7. 700a7920: bf00         	nop
+  8. 700a7922: bf00         	nop
+  9. 700a7924: bf00         	nop
+  10. 700a7926: bf00         	nop
+  11. 700a7928: bf00         	nop
+  12. 700a792a: bf00         	nop
+  13. 700a792c: bf00         	nop
+  14. 700a792e: bf00         	nop
+  15. 700a7930: bf00         	nop
+
+P_HDR Event: Idx:65400 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7932: bf00         	nop
+  2. 700a7934: bf00         	nop
+  3. 700a7936: bf00         	nop
+  4. 700a7938: bf00         	nop
+  5. 700a793a: bf00         	nop
+  6. 700a793c: bf00         	nop
+  7. 700a793e: bf00         	nop
+  8. 700a7940: bf00         	nop
+  9. 700a7942: bf00         	nop
+  10. 700a7944: bf00         	nop
+  11. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  12. 700a78e0: 3832         	subs	r0, #0x32
+  13. 700a78e2: bf00         	nop
+  14. 700a78e4: bf00         	nop
+  15. 700a78e6: bf00         	nop
+
+P_HDR Event: Idx:65401 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78e8: bf00         	nop
+  2. 700a78ea: bf00         	nop
+  3. 700a78ec: bf00         	nop
+  4. 700a78ee: bf00         	nop
+  5. 700a78f0: bf00         	nop
+  6. 700a78f2: bf00         	nop
+  7. 700a78f4: bf00         	nop
+  8. 700a78f6: bf00         	nop
+  9. 700a78f8: bf00         	nop
+  10. 700a78fa: bf00         	nop
+  11. 700a78fc: bf00         	nop
+  12. 700a78fe: bf00         	nop
+  13. 700a7900: bf00         	nop
+  14. 700a7902: bf00         	nop
+  15. 700a7904: bf00         	nop
+
+P_HDR Event: Idx:65402 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7906: bf00         	nop
+  2. 700a7908: bf00         	nop
+  3. 700a790a: bf00         	nop
+  4. 700a790c: bf00         	nop
+  5. 700a790e: bf00         	nop
+  6. 700a7910: bf00         	nop
+  7. 700a7912: bf00         	nop
+  8. 700a7914: bf00         	nop
+  9. 700a7916: bf00         	nop
+  10. 700a7918: bf00         	nop
+  11. 700a791a: bf00         	nop
+  12. 700a791c: bf00         	nop
+  13. 700a791e: bf00         	nop
+  14. 700a7920: bf00         	nop
+  15. 700a7922: bf00         	nop
+
+P_HDR Event: Idx:65403 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7924: bf00         	nop
+  2. 700a7926: bf00         	nop
+  3. 700a7928: bf00         	nop
+  4. 700a792a: bf00         	nop
+  5. 700a792c: bf00         	nop
+  6. 700a792e: bf00         	nop
+  7. 700a7930: bf00         	nop
+  8. 700a7932: bf00         	nop
+  9. 700a7934: bf00         	nop
+  10. 700a7936: bf00         	nop
+  11. 700a7938: bf00         	nop
+  12. 700a793a: bf00         	nop
+  13. 700a793c: bf00         	nop
+  14. 700a793e: bf00         	nop
+  15. 700a7940: bf00         	nop
+
+P_HDR Event: Idx:65404 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7942: bf00         	nop
+  2. 700a7944: bf00         	nop
+  3. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  4. 700a78e0: 3832         	subs	r0, #0x32
+  5. 700a78e2: bf00         	nop
+  6. 700a78e4: bf00         	nop
+  7. 700a78e6: bf00         	nop
+  8. 700a78e8: bf00         	nop
+  9. 700a78ea: bf00         	nop
+  10. 700a78ec: bf00         	nop
+  11. 700a78ee: bf00         	nop
+  12. 700a78f0: bf00         	nop
+  13. 700a78f2: bf00         	nop
+  14. 700a78f4: bf00         	nop
+  15. 700a78f6: bf00         	nop
+
+P_HDR Event: Idx:65405 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f8: bf00         	nop
+  2. 700a78fa: bf00         	nop
+  3. 700a78fc: bf00         	nop
+  4. 700a78fe: bf00         	nop
+  5. 700a7900: bf00         	nop
+  6. 700a7902: bf00         	nop
+  7. 700a7904: bf00         	nop
+  8. 700a7906: bf00         	nop
+  9. 700a7908: bf00         	nop
+  10. 700a790a: bf00         	nop
+  11. 700a790c: bf00         	nop
+  12. 700a790e: bf00         	nop
+  13. 700a7910: bf00         	nop
+  14. 700a7912: bf00         	nop
+  15. 700a7914: bf00         	nop
+
+P_HDR Event: Idx:65406 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7916: bf00         	nop
+  2. 700a7918: bf00         	nop
+  3. 700a791a: bf00         	nop
+  4. 700a791c: bf00         	nop
+  5. 700a791e: bf00         	nop
+  6. 700a7920: bf00         	nop
+  7. 700a7922: bf00         	nop
+  8. 700a7924: bf00         	nop
+  9. 700a7926: bf00         	nop
+  10. 700a7928: bf00         	nop
+  11. 700a792a: bf00         	nop
+  12. 700a792c: bf00         	nop
+  13. 700a792e: bf00         	nop
+  14. 700a7930: bf00         	nop
+  15. 700a7932: bf00         	nop
+
+P_HDR Event: Idx:65408 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7934: bf00         	nop
+  2. 700a7936: bf00         	nop
+  3. 700a7938: bf00         	nop
+  4. 700a793a: bf00         	nop
+  5. 700a793c: bf00         	nop
+  6. 700a793e: bf00         	nop
+  7. 700a7940: bf00         	nop
+  8. 700a7942: bf00         	nop
+  9. 700a7944: bf00         	nop
+  10. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  11. 700a78e0: 3832         	subs	r0, #0x32
+  12. 700a78e2: bf00         	nop
+  13. 700a78e4: bf00         	nop
+  14. 700a78e6: bf00         	nop
+  15. 700a78e8: bf00         	nop
+
+P_HDR Event: Idx:65409 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78ea: bf00         	nop
+  2. 700a78ec: bf00         	nop
+  3. 700a78ee: bf00         	nop
+  4. 700a78f0: bf00         	nop
+  5. 700a78f2: bf00         	nop
+  6. 700a78f4: bf00         	nop
+  7. 700a78f6: bf00         	nop
+  8. 700a78f8: bf00         	nop
+  9. 700a78fa: bf00         	nop
+  10. 700a78fc: bf00         	nop
+  11. 700a78fe: bf00         	nop
+  12. 700a7900: bf00         	nop
+  13. 700a7902: bf00         	nop
+  14. 700a7904: bf00         	nop
+  15. 700a7906: bf00         	nop
+
+P_HDR Event: Idx:65410 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7908: bf00         	nop
+  2. 700a790a: bf00         	nop
+  3. 700a790c: bf00         	nop
+  4. 700a790e: bf00         	nop
+  5. 700a7910: bf00         	nop
+  6. 700a7912: bf00         	nop
+  7. 700a7914: bf00         	nop
+  8. 700a7916: bf00         	nop
+  9. 700a7918: bf00         	nop
+  10. 700a791a: bf00         	nop
+  11. 700a791c: bf00         	nop
+  12. 700a791e: bf00         	nop
+  13. 700a7920: bf00         	nop
+  14. 700a7922: bf00         	nop
+  15. 700a7924: bf00         	nop
+
+P_HDR Event: Idx:65411 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7926: bf00         	nop
+  2. 700a7928: bf00         	nop
+  3. 700a792a: bf00         	nop
+  4. 700a792c: bf00         	nop
+  5. 700a792e: bf00         	nop
+  6. 700a7930: bf00         	nop
+  7. 700a7932: bf00         	nop
+  8. 700a7934: bf00         	nop
+  9. 700a7936: bf00         	nop
+  10. 700a7938: bf00         	nop
+  11. 700a793a: bf00         	nop
+  12. 700a793c: bf00         	nop
+  13. 700a793e: bf00         	nop
+  14. 700a7940: bf00         	nop
+  15. 700a7942: bf00         	nop
+
+P_HDR Event: Idx:65414 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7944: bf00         	nop
+  2. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  3. 700a78e0: 3832         	subs	r0, #0x32
+  4. 700a78e2: bf00         	nop
+  5. 700a78e4: bf00         	nop
+  6. 700a78e6: bf00         	nop
+  7. 700a78e8: bf00         	nop
+  8. 700a78ea: bf00         	nop
+  9. 700a78ec: bf00         	nop
+  10. 700a78ee: bf00         	nop
+  11. 700a78f0: bf00         	nop
+  12. 700a78f2: bf00         	nop
+  13. 700a78f4: bf00         	nop
+  14. 700a78f6: bf00         	nop
+  15. 700a78f8: bf00         	nop
+
+P_HDR Event: Idx:65415 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78fa: bf00         	nop
+  2. 700a78fc: bf00         	nop
+  3. 700a78fe: bf00         	nop
+  4. 700a7900: bf00         	nop
+  5. 700a7902: bf00         	nop
+  6. 700a7904: bf00         	nop
+  7. 700a7906: bf00         	nop
+  8. 700a7908: bf00         	nop
+  9. 700a790a: bf00         	nop
+  10. 700a790c: bf00         	nop
+  11. 700a790e: bf00         	nop
+  12. 700a7910: bf00         	nop
+  13. 700a7912: bf00         	nop
+  14. 700a7914: bf00         	nop
+  15. 700a7916: bf00         	nop
+
+P_HDR Event: Idx:65416 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7918: bf00         	nop
+  2. 700a791a: bf00         	nop
+  3. 700a791c: bf00         	nop
+  4. 700a791e: bf00         	nop
+  5. 700a7920: bf00         	nop
+  6. 700a7922: bf00         	nop
+  7. 700a7924: bf00         	nop
+  8. 700a7926: bf00         	nop
+  9. 700a7928: bf00         	nop
+  10. 700a792a: bf00         	nop
+  11. 700a792c: bf00         	nop
+  12. 700a792e: bf00         	nop
+  13. 700a7930: bf00         	nop
+  14. 700a7932: bf00         	nop
+  15. 700a7934: bf00         	nop
+
+P_HDR Event: Idx:65417 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7936: bf00         	nop
+  2. 700a7938: bf00         	nop
+  3. 700a793a: bf00         	nop
+  4. 700a793c: bf00         	nop
+  5. 700a793e: bf00         	nop
+  6. 700a7940: bf00         	nop
+  7. 700a7942: bf00         	nop
+  8. 700a7944: bf00         	nop
+  9. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  10. 700a78e0: 3832         	subs	r0, #0x32
+  11. 700a78e2: bf00         	nop
+  12. 700a78e4: bf00         	nop
+  13. 700a78e6: bf00         	nop
+  14. 700a78e8: bf00         	nop
+  15. 700a78ea: bf00         	nop
+
+P_HDR Event: Idx:65418 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78ec: bf00         	nop
+  2. 700a78ee: bf00         	nop
+  3. 700a78f0: bf00         	nop
+  4. 700a78f2: bf00         	nop
+  5. 700a78f4: bf00         	nop
+  6. 700a78f6: bf00         	nop
+  7. 700a78f8: bf00         	nop
+  8. 700a78fa: bf00         	nop
+  9. 700a78fc: bf00         	nop
+  10. 700a78fe: bf00         	nop
+  11. 700a7900: bf00         	nop
+  12. 700a7902: bf00         	nop
+  13. 700a7904: bf00         	nop
+  14. 700a7906: bf00         	nop
+  15. 700a7908: bf00         	nop
+
+P_HDR Event: Idx:65419 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a790a: bf00         	nop
+  2. 700a790c: bf00         	nop
+  3. 700a790e: bf00         	nop
+  4. 700a7910: bf00         	nop
+  5. 700a7912: bf00         	nop
+  6. 700a7914: bf00         	nop
+  7. 700a7916: bf00         	nop
+  8. 700a7918: bf00         	nop
+  9. 700a791a: bf00         	nop
+  10. 700a791c: bf00         	nop
+  11. 700a791e: bf00         	nop
+  12. 700a7920: bf00         	nop
+  13. 700a7922: bf00         	nop
+  14. 700a7924: bf00         	nop
+  15. 700a7926: bf00         	nop
+
+P_HDR Event: Idx:65420 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7928: bf00         	nop
+  2. 700a792a: bf00         	nop
+  3. 700a792c: bf00         	nop
+  4. 700a792e: bf00         	nop
+  5. 700a7930: bf00         	nop
+  6. 700a7932: bf00         	nop
+  7. 700a7934: bf00         	nop
+  8. 700a7936: bf00         	nop
+  9. 700a7938: bf00         	nop
+  10. 700a793a: bf00         	nop
+  11. 700a793c: bf00         	nop
+  12. 700a793e: bf00         	nop
+  13. 700a7940: bf00         	nop
+  14. 700a7942: bf00         	nop
+  15. 700a7944: bf00         	nop
+
+P_HDR Event: Idx:65421 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  2. 700a78e0: 3832         	subs	r0, #0x32
+  3. 700a78e2: bf00         	nop
+  4. 700a78e4: bf00         	nop
+  5. 700a78e6: bf00         	nop
+  6. 700a78e8: bf00         	nop
+  7. 700a78ea: bf00         	nop
+  8. 700a78ec: bf00         	nop
+  9. 700a78ee: bf00         	nop
+  10. 700a78f0: bf00         	nop
+  11. 700a78f2: bf00         	nop
+  12. 700a78f4: bf00         	nop
+  13. 700a78f6: bf00         	nop
+  14. 700a78f8: bf00         	nop
+  15. 700a78fa: bf00         	nop
+
+P_HDR Event: Idx:65424 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78fc: bf00         	nop
+  2. 700a78fe: bf00         	nop
+  3. 700a7900: bf00         	nop
+  4. 700a7902: bf00         	nop
+  5. 700a7904: bf00         	nop
+  6. 700a7906: bf00         	nop
+  7. 700a7908: bf00         	nop
+  8. 700a790a: bf00         	nop
+  9. 700a790c: bf00         	nop
+  10. 700a790e: bf00         	nop
+  11. 700a7910: bf00         	nop
+  12. 700a7912: bf00         	nop
+  13. 700a7914: bf00         	nop
+  14. 700a7916: bf00         	nop
+  15. 700a7918: bf00         	nop
+
+P_HDR Event: Idx:65425 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a791a: bf00         	nop
+  2. 700a791c: bf00         	nop
+  3. 700a791e: bf00         	nop
+  4. 700a7920: bf00         	nop
+  5. 700a7922: bf00         	nop
+  6. 700a7924: bf00         	nop
+  7. 700a7926: bf00         	nop
+  8. 700a7928: bf00         	nop
+  9. 700a792a: bf00         	nop
+  10. 700a792c: bf00         	nop
+  11. 700a792e: bf00         	nop
+  12. 700a7930: bf00         	nop
+  13. 700a7932: bf00         	nop
+  14. 700a7934: bf00         	nop
+  15. 700a7936: bf00         	nop
+
+P_HDR Event: Idx:65426 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7938: bf00         	nop
+  2. 700a793a: bf00         	nop
+  3. 700a793c: bf00         	nop
+  4. 700a793e: bf00         	nop
+  5. 700a7940: bf00         	nop
+  6. 700a7942: bf00         	nop
+  7. 700a7944: bf00         	nop
+  8. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  9. 700a78e0: 3832         	subs	r0, #0x32
+  10. 700a78e2: bf00         	nop
+  11. 700a78e4: bf00         	nop
+  12. 700a78e6: bf00         	nop
+  13. 700a78e8: bf00         	nop
+  14. 700a78ea: bf00         	nop
+  15. 700a78ec: bf00         	nop
+
+P_HDR Event: Idx:65427 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78ee: bf00         	nop
+  2. 700a78f0: bf00         	nop
+  3. 700a78f2: bf00         	nop
+  4. 700a78f4: bf00         	nop
+  5. 700a78f6: bf00         	nop
+  6. 700a78f8: bf00         	nop
+  7. 700a78fa: bf00         	nop
+  8. 700a78fc: bf00         	nop
+  9. 700a78fe: bf00         	nop
+  10. 700a7900: bf00         	nop
+  11. 700a7902: bf00         	nop
+  12. 700a7904: bf00         	nop
+  13. 700a7906: bf00         	nop
+  14. 700a7908: bf00         	nop
+  15. 700a790a: bf00         	nop
+
+P_HDR Event: Idx:65428 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a790c: bf00         	nop
+  2. 700a790e: bf00         	nop
+  3. 700a7910: bf00         	nop
+  4. 700a7912: bf00         	nop
+  5. 700a7914: bf00         	nop
+  6. 700a7916: bf00         	nop
+  7. 700a7918: bf00         	nop
+  8. 700a791a: bf00         	nop
+  9. 700a791c: bf00         	nop
+  10. 700a791e: bf00         	nop
+  11. 700a7920: bf00         	nop
+  12. 700a7922: bf00         	nop
+  13. 700a7924: bf00         	nop
+  14. 700a7926: bf00         	nop
+  15. 700a7928: bf00         	nop
+
+P_HDR Event: Idx:65429 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a792a: bf00         	nop
+  2. 700a792c: bf00         	nop
+  3. 700a792e: bf00         	nop
+  4. 700a7930: bf00         	nop
+  5. 700a7932: bf00         	nop
+  6. 700a7934: bf00         	nop
+  7. 700a7936: bf00         	nop
+  8. 700a7938: bf00         	nop
+  9. 700a793a: bf00         	nop
+  10. 700a793c: bf00         	nop
+  11. 700a793e: bf00         	nop
+  12. 700a7940: bf00         	nop
+  13. 700a7942: bf00         	nop
+  14. 700a7944: bf00         	nop
+  15. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+
+P_HDR Event: Idx:65430 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78e0: 3832         	subs	r0, #0x32
+  2. 700a78e2: bf00         	nop
+  3. 700a78e4: bf00         	nop
+  4. 700a78e6: bf00         	nop
+  5. 700a78e8: bf00         	nop
+  6. 700a78ea: bf00         	nop
+  7. 700a78ec: bf00         	nop
+  8. 700a78ee: bf00         	nop
+  9. 700a78f0: bf00         	nop
+  10. 700a78f2: bf00         	nop
+  11. 700a78f4: bf00         	nop
+  12. 700a78f6: bf00         	nop
+  13. 700a78f8: bf00         	nop
+  14. 700a78fa: bf00         	nop
+  15. 700a78fc: bf00         	nop
+
+P_HDR Event: Idx:65431 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78fe: bf00         	nop
+  2. 700a7900: bf00         	nop
+  3. 700a7902: bf00         	nop
+  4. 700a7904: bf00         	nop
+  5. 700a7906: bf00         	nop
+  6. 700a7908: bf00         	nop
+  7. 700a790a: bf00         	nop
+  8. 700a790c: bf00         	nop
+  9. 700a790e: bf00         	nop
+  10. 700a7910: bf00         	nop
+  11. 700a7912: bf00         	nop
+  12. 700a7914: bf00         	nop
+  13. 700a7916: bf00         	nop
+  14. 700a7918: bf00         	nop
+  15. 700a791a: bf00         	nop
+
+P_HDR Event: Idx:65432 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a791c: bf00         	nop
+  2. 700a791e: bf00         	nop
+  3. 700a7920: bf00         	nop
+  4. 700a7922: bf00         	nop
+  5. 700a7924: bf00         	nop
+  6. 700a7926: bf00         	nop
+  7. 700a7928: bf00         	nop
+  8. 700a792a: bf00         	nop
+  9. 700a792c: bf00         	nop
+  10. 700a792e: bf00         	nop
+  11. 700a7930: bf00         	nop
+  12. 700a7932: bf00         	nop
+  13. 700a7934: bf00         	nop
+  14. 700a7936: bf00         	nop
+  15. 700a7938: bf00         	nop
+
+P_HDR Event: Idx:65433 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a793a: bf00         	nop
+  2. 700a793c: bf00         	nop
+  3. 700a793e: bf00         	nop
+  4. 700a7940: bf00         	nop
+  5. 700a7942: bf00         	nop
+  6. 700a7944: bf00         	nop
+  7. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  8. 700a78e0: 3832         	subs	r0, #0x32
+  9. 700a78e2: bf00         	nop
+  10. 700a78e4: bf00         	nop
+  11. 700a78e6: bf00         	nop
+  12. 700a78e8: bf00         	nop
+  13. 700a78ea: bf00         	nop
+  14. 700a78ec: bf00         	nop
+  15. 700a78ee: bf00         	nop
+
+P_HDR Event: Idx:65434 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f0: bf00         	nop
+  2. 700a78f2: bf00         	nop
+  3. 700a78f4: bf00         	nop
+  4. 700a78f6: bf00         	nop
+  5. 700a78f8: bf00         	nop
+  6. 700a78fa: bf00         	nop
+  7. 700a78fc: bf00         	nop
+  8. 700a78fe: bf00         	nop
+  9. 700a7900: bf00         	nop
+  10. 700a7902: bf00         	nop
+  11. 700a7904: bf00         	nop
+  12. 700a7906: bf00         	nop
+  13. 700a7908: bf00         	nop
+  14. 700a790a: bf00         	nop
+  15. 700a790c: bf00         	nop
+
+P_HDR Event: Idx:65435 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a790e: bf00         	nop
+  2. 700a7910: bf00         	nop
+  3. 700a7912: bf00         	nop
+  4. 700a7914: bf00         	nop
+  5. 700a7916: bf00         	nop
+  6. 700a7918: bf00         	nop
+  7. 700a791a: bf00         	nop
+  8. 700a791c: bf00         	nop
+  9. 700a791e: bf00         	nop
+  10. 700a7920: bf00         	nop
+  11. 700a7922: bf00         	nop
+  12. 700a7924: bf00         	nop
+  13. 700a7926: bf00         	nop
+  14. 700a7928: bf00         	nop
+  15. 700a792a: bf00         	nop
+
+P_HDR Event: Idx:65436 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a792c: bf00         	nop
+  2. 700a792e: bf00         	nop
+  3. 700a7930: bf00         	nop
+  4. 700a7932: bf00         	nop
+  5. 700a7934: bf00         	nop
+  6. 700a7936: bf00         	nop
+  7. 700a7938: bf00         	nop
+  8. 700a793a: bf00         	nop
+  9. 700a793c: bf00         	nop
+  10. 700a793e: bf00         	nop
+  11. 700a7940: bf00         	nop
+  12. 700a7942: bf00         	nop
+  13. 700a7944: bf00         	nop
+  14. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  15. 700a78e0: 3832         	subs	r0, #0x32
+
+P_HDR Event: Idx:65437 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78e2: bf00         	nop
+  2. 700a78e4: bf00         	nop
+  3. 700a78e6: bf00         	nop
+  4. 700a78e8: bf00         	nop
+  5. 700a78ea: bf00         	nop
+  6. 700a78ec: bf00         	nop
+  7. 700a78ee: bf00         	nop
+  8. 700a78f0: bf00         	nop
+  9. 700a78f2: bf00         	nop
+  10. 700a78f4: bf00         	nop
+  11. 700a78f6: bf00         	nop
+  12. 700a78f8: bf00         	nop
+  13. 700a78fa: bf00         	nop
+  14. 700a78fc: bf00         	nop
+  15. 700a78fe: bf00         	nop
+
+P_HDR Event: Idx:65438 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7900: bf00         	nop
+  2. 700a7902: bf00         	nop
+  3. 700a7904: bf00         	nop
+  4. 700a7906: bf00         	nop
+  5. 700a7908: bf00         	nop
+  6. 700a790a: bf00         	nop
+  7. 700a790c: bf00         	nop
+  8. 700a790e: bf00         	nop
+  9. 700a7910: bf00         	nop
+  10. 700a7912: bf00         	nop
+  11. 700a7914: bf00         	nop
+  12. 700a7916: bf00         	nop
+  13. 700a7918: bf00         	nop
+  14. 700a791a: bf00         	nop
+  15. 700a791c: bf00         	nop
+
+P_HDR Event: Idx:65440 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a791e: bf00         	nop
+  2. 700a7920: bf00         	nop
+  3. 700a7922: bf00         	nop
+  4. 700a7924: bf00         	nop
+  5. 700a7926: bf00         	nop
+  6. 700a7928: bf00         	nop
+  7. 700a792a: bf00         	nop
+  8. 700a792c: bf00         	nop
+  9. 700a792e: bf00         	nop
+  10. 700a7930: bf00         	nop
+  11. 700a7932: bf00         	nop
+  12. 700a7934: bf00         	nop
+  13. 700a7936: bf00         	nop
+  14. 700a7938: bf00         	nop
+  15. 700a793a: bf00         	nop
+
+P_HDR Event: Idx:65441 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a793c: bf00         	nop
+  2. 700a793e: bf00         	nop
+  3. 700a7940: bf00         	nop
+  4. 700a7942: bf00         	nop
+  5. 700a7944: bf00         	nop
+  6. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  7. 700a78e0: 3832         	subs	r0, #0x32
+  8. 700a78e2: bf00         	nop
+  9. 700a78e4: bf00         	nop
+  10. 700a78e6: bf00         	nop
+  11. 700a78e8: bf00         	nop
+  12. 700a78ea: bf00         	nop
+  13. 700a78ec: bf00         	nop
+  14. 700a78ee: bf00         	nop
+  15. 700a78f0: bf00         	nop
+
+P_HDR Event: Idx:65442 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f2: bf00         	nop
+  2. 700a78f4: bf00         	nop
+  3. 700a78f6: bf00         	nop
+  4. 700a78f8: bf00         	nop
+  5. 700a78fa: bf00         	nop
+  6. 700a78fc: bf00         	nop
+  7. 700a78fe: bf00         	nop
+  8. 700a7900: bf00         	nop
+  9. 700a7902: bf00         	nop
+  10. 700a7904: bf00         	nop
+  11. 700a7906: bf00         	nop
+  12. 700a7908: bf00         	nop
+  13. 700a790a: bf00         	nop
+  14. 700a790c: bf00         	nop
+  15. 700a790e: bf00         	nop
+
+P_HDR Event: Idx:65443 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7910: bf00         	nop
+  2. 700a7912: bf00         	nop
+  3. 700a7914: bf00         	nop
+  4. 700a7916: bf00         	nop
+  5. 700a7918: bf00         	nop
+  6. 700a791a: bf00         	nop
+  7. 700a791c: bf00         	nop
+  8. 700a791e: bf00         	nop
+  9. 700a7920: bf00         	nop
+  10. 700a7922: bf00         	nop
+  11. 700a7924: bf00         	nop
+  12. 700a7926: bf00         	nop
+  13. 700a7928: bf00         	nop
+  14. 700a792a: bf00         	nop
+  15. 700a792c: bf00         	nop
+
+P_HDR Event: Idx:65444 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a792e: bf00         	nop
+  2. 700a7930: bf00         	nop
+  3. 700a7932: bf00         	nop
+  4. 700a7934: bf00         	nop
+  5. 700a7936: bf00         	nop
+  6. 700a7938: bf00         	nop
+  7. 700a793a: bf00         	nop
+  8. 700a793c: bf00         	nop
+  9. 700a793e: bf00         	nop
+  10. 700a7940: bf00         	nop
+  11. 700a7942: bf00         	nop
+  12. 700a7944: bf00         	nop
+  13. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  14. 700a78e0: 3832         	subs	r0, #0x32
+  15. 700a78e2: bf00         	nop
+
+P_HDR Event: Idx:65445 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78e4: bf00         	nop
+  2. 700a78e6: bf00         	nop
+  3. 700a78e8: bf00         	nop
+  4. 700a78ea: bf00         	nop
+  5. 700a78ec: bf00         	nop
+  6. 700a78ee: bf00         	nop
+  7. 700a78f0: bf00         	nop
+  8. 700a78f2: bf00         	nop
+  9. 700a78f4: bf00         	nop
+  10. 700a78f6: bf00         	nop
+  11. 700a78f8: bf00         	nop
+  12. 700a78fa: bf00         	nop
+  13. 700a78fc: bf00         	nop
+  14. 700a78fe: bf00         	nop
+  15. 700a7900: bf00         	nop
+
+P_HDR Event: Idx:65446 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7902: bf00         	nop
+  2. 700a7904: bf00         	nop
+  3. 700a7906: bf00         	nop
+  4. 700a7908: bf00         	nop
+  5. 700a790a: bf00         	nop
+  6. 700a790c: bf00         	nop
+  7. 700a790e: bf00         	nop
+  8. 700a7910: bf00         	nop
+  9. 700a7912: bf00         	nop
+  10. 700a7914: bf00         	nop
+  11. 700a7916: bf00         	nop
+  12. 700a7918: bf00         	nop
+  13. 700a791a: bf00         	nop
+  14. 700a791c: bf00         	nop
+  15. 700a791e: bf00         	nop
+
+P_HDR Event: Idx:65447 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7920: bf00         	nop
+  2. 700a7922: bf00         	nop
+  3. 700a7924: bf00         	nop
+  4. 700a7926: bf00         	nop
+  5. 700a7928: bf00         	nop
+  6. 700a792a: bf00         	nop
+  7. 700a792c: bf00         	nop
+  8. 700a792e: bf00         	nop
+  9. 700a7930: bf00         	nop
+  10. 700a7932: bf00         	nop
+  11. 700a7934: bf00         	nop
+  12. 700a7936: bf00         	nop
+  13. 700a7938: bf00         	nop
+  14. 700a793a: bf00         	nop
+  15. 700a793c: bf00         	nop
+
+P_HDR Event: Idx:65448 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a793e: bf00         	nop
+  2. 700a7940: bf00         	nop
+  3. 700a7942: bf00         	nop
+  4. 700a7944: bf00         	nop
+  5. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  6. 700a78e0: 3832         	subs	r0, #0x32
+  7. 700a78e2: bf00         	nop
+  8. 700a78e4: bf00         	nop
+  9. 700a78e6: bf00         	nop
+  10. 700a78e8: bf00         	nop
+  11. 700a78ea: bf00         	nop
+  12. 700a78ec: bf00         	nop
+  13. 700a78ee: bf00         	nop
+  14. 700a78f0: bf00         	nop
+  15. 700a78f2: bf00         	nop
+
+P_HDR Event: Idx:65449 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f4: bf00         	nop
+  2. 700a78f6: bf00         	nop
+  3. 700a78f8: bf00         	nop
+  4. 700a78fa: bf00         	nop
+  5. 700a78fc: bf00         	nop
+  6. 700a78fe: bf00         	nop
+  7. 700a7900: bf00         	nop
+  8. 700a7902: bf00         	nop
+  9. 700a7904: bf00         	nop
+  10. 700a7906: bf00         	nop
+  11. 700a7908: bf00         	nop
+  12. 700a790a: bf00         	nop
+  13. 700a790c: bf00         	nop
+  14. 700a790e: bf00         	nop
+  15. 700a7910: bf00         	nop
+
+P_HDR Event: Idx:65450 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7912: bf00         	nop
+  2. 700a7914: bf00         	nop
+  3. 700a7916: bf00         	nop
+  4. 700a7918: bf00         	nop
+  5. 700a791a: bf00         	nop
+  6. 700a791c: bf00         	nop
+  7. 700a791e: bf00         	nop
+  8. 700a7920: bf00         	nop
+  9. 700a7922: bf00         	nop
+  10. 700a7924: bf00         	nop
+  11. 700a7926: bf00         	nop
+  12. 700a7928: bf00         	nop
+  13. 700a792a: bf00         	nop
+  14. 700a792c: bf00         	nop
+  15. 700a792e: bf00         	nop
+
+P_HDR Event: Idx:65451 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7930: bf00         	nop
+  2. 700a7932: bf00         	nop
+  3. 700a7934: bf00         	nop
+  4. 700a7936: bf00         	nop
+  5. 700a7938: bf00         	nop
+  6. 700a793a: bf00         	nop
+  7. 700a793c: bf00         	nop
+  8. 700a793e: bf00         	nop
+  9. 700a7940: bf00         	nop
+  10. 700a7942: bf00         	nop
+  11. 700a7944: bf00         	nop
+  12. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  13. 700a78e0: 3832         	subs	r0, #0x32
+  14. 700a78e2: bf00         	nop
+  15. 700a78e4: bf00         	nop
+
+P_HDR Event: Idx:65452 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78e6: bf00         	nop
+  2. 700a78e8: bf00         	nop
+  3. 700a78ea: bf00         	nop
+  4. 700a78ec: bf00         	nop
+  5. 700a78ee: bf00         	nop
+  6. 700a78f0: bf00         	nop
+  7. 700a78f2: bf00         	nop
+  8. 700a78f4: bf00         	nop
+  9. 700a78f6: bf00         	nop
+  10. 700a78f8: bf00         	nop
+  11. 700a78fa: bf00         	nop
+  12. 700a78fc: bf00         	nop
+  13. 700a78fe: bf00         	nop
+  14. 700a7900: bf00         	nop
+  15. 700a7902: bf00         	nop
+
+P_HDR Event: Idx:65453 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7904: bf00         	nop
+  2. 700a7906: bf00         	nop
+  3. 700a7908: bf00         	nop
+  4. 700a790a: bf00         	nop
+  5. 700a790c: bf00         	nop
+  6. 700a790e: bf00         	nop
+  7. 700a7910: bf00         	nop
+  8. 700a7912: bf00         	nop
+  9. 700a7914: bf00         	nop
+  10. 700a7916: bf00         	nop
+  11. 700a7918: bf00         	nop
+  12. 700a791a: bf00         	nop
+  13. 700a791c: bf00         	nop
+  14. 700a791e: bf00         	nop
+  15. 700a7920: bf00         	nop
+
+P_HDR Event: Idx:65454 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7922: bf00         	nop
+  2. 700a7924: bf00         	nop
+  3. 700a7926: bf00         	nop
+  4. 700a7928: bf00         	nop
+  5. 700a792a: bf00         	nop
+  6. 700a792c: bf00         	nop
+  7. 700a792e: bf00         	nop
+  8. 700a7930: bf00         	nop
+  9. 700a7932: bf00         	nop
+  10. 700a7934: bf00         	nop
+  11. 700a7936: bf00         	nop
+  12. 700a7938: bf00         	nop
+  13. 700a793a: bf00         	nop
+  14. 700a793c: bf00         	nop
+  15. 700a793e: bf00         	nop
+
+P_HDR Event: Idx:65456 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7940: bf00         	nop
+  2. 700a7942: bf00         	nop
+  3. 700a7944: bf00         	nop
+  4. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  5. 700a78e0: 3832         	subs	r0, #0x32
+  6. 700a78e2: bf00         	nop
+  7. 700a78e4: bf00         	nop
+  8. 700a78e6: bf00         	nop
+  9. 700a78e8: bf00         	nop
+  10. 700a78ea: bf00         	nop
+  11. 700a78ec: bf00         	nop
+  12. 700a78ee: bf00         	nop
+  13. 700a78f0: bf00         	nop
+  14. 700a78f2: bf00         	nop
+  15. 700a78f4: bf00         	nop
+
+P_HDR Event: Idx:65457 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f6: bf00         	nop
+  2. 700a78f8: bf00         	nop
+  3. 700a78fa: bf00         	nop
+  4. 700a78fc: bf00         	nop
+  5. 700a78fe: bf00         	nop
+  6. 700a7900: bf00         	nop
+  7. 700a7902: bf00         	nop
+  8. 700a7904: bf00         	nop
+  9. 700a7906: bf00         	nop
+  10. 700a7908: bf00         	nop
+  11. 700a790a: bf00         	nop
+  12. 700a790c: bf00         	nop
+  13. 700a790e: bf00         	nop
+  14. 700a7910: bf00         	nop
+  15. 700a7912: bf00         	nop
+
+P_HDR Event: Idx:65458 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7914: bf00         	nop
+  2. 700a7916: bf00         	nop
+  3. 700a7918: bf00         	nop
+  4. 700a791a: bf00         	nop
+  5. 700a791c: bf00         	nop
+  6. 700a791e: bf00         	nop
+  7. 700a7920: bf00         	nop
+  8. 700a7922: bf00         	nop
+  9. 700a7924: bf00         	nop
+  10. 700a7926: bf00         	nop
+  11. 700a7928: bf00         	nop
+  12. 700a792a: bf00         	nop
+  13. 700a792c: bf00         	nop
+  14. 700a792e: bf00         	nop
+  15. 700a7930: bf00         	nop
+
+P_HDR Event: Idx:65459 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7932: bf00         	nop
+  2. 700a7934: bf00         	nop
+  3. 700a7936: bf00         	nop
+  4. 700a7938: bf00         	nop
+  5. 700a793a: bf00         	nop
+  6. 700a793c: bf00         	nop
+  7. 700a793e: bf00         	nop
+  8. 700a7940: bf00         	nop
+  9. 700a7942: bf00         	nop
+  10. 700a7944: bf00         	nop
+  11. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  12. 700a78e0: 3832         	subs	r0, #0x32
+  13. 700a78e2: bf00         	nop
+  14. 700a78e4: bf00         	nop
+  15. 700a78e6: bf00         	nop
+
+P_HDR Event: Idx:65460 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78e8: bf00         	nop
+  2. 700a78ea: bf00         	nop
+  3. 700a78ec: bf00         	nop
+  4. 700a78ee: bf00         	nop
+  5. 700a78f0: bf00         	nop
+  6. 700a78f2: bf00         	nop
+  7. 700a78f4: bf00         	nop
+  8. 700a78f6: bf00         	nop
+  9. 700a78f8: bf00         	nop
+  10. 700a78fa: bf00         	nop
+  11. 700a78fc: bf00         	nop
+  12. 700a78fe: bf00         	nop
+  13. 700a7900: bf00         	nop
+  14. 700a7902: bf00         	nop
+  15. 700a7904: bf00         	nop
+
+P_HDR Event: Idx:65461 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7906: bf00         	nop
+  2. 700a7908: bf00         	nop
+  3. 700a790a: bf00         	nop
+  4. 700a790c: bf00         	nop
+  5. 700a790e: bf00         	nop
+  6. 700a7910: bf00         	nop
+  7. 700a7912: bf00         	nop
+  8. 700a7914: bf00         	nop
+  9. 700a7916: bf00         	nop
+  10. 700a7918: bf00         	nop
+  11. 700a791a: bf00         	nop
+  12. 700a791c: bf00         	nop
+  13. 700a791e: bf00         	nop
+  14. 700a7920: bf00         	nop
+  15. 700a7922: bf00         	nop
+
+P_HDR Event: Idx:65462 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7924: bf00         	nop
+  2. 700a7926: bf00         	nop
+  3. 700a7928: bf00         	nop
+  4. 700a792a: bf00         	nop
+  5. 700a792c: bf00         	nop
+  6. 700a792e: bf00         	nop
+  7. 700a7930: bf00         	nop
+  8. 700a7932: bf00         	nop
+  9. 700a7934: bf00         	nop
+  10. 700a7936: bf00         	nop
+  11. 700a7938: bf00         	nop
+  12. 700a793a: bf00         	nop
+  13. 700a793c: bf00         	nop
+  14. 700a793e: bf00         	nop
+  15. 700a7940: bf00         	nop
+
+P_HDR Event: Idx:65463 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7942: bf00         	nop
+  2. 700a7944: bf00         	nop
+  3. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+  4. 700a78e0: 3832         	subs	r0, #0x32
+  5. 700a78e2: bf00         	nop
+  6. 700a78e4: bf00         	nop
+  7. 700a78e6: bf00         	nop
+  8. 700a78e8: bf00         	nop
+  9. 700a78ea: bf00         	nop
+  10. 700a78ec: bf00         	nop
+  11. 700a78ee: bf00         	nop
+  12. 700a78f0: bf00         	nop
+  13. 700a78f2: bf00         	nop
+  14. 700a78f4: bf00         	nop
+  15. 700a78f6: bf00         	nop
+
+P_HDR Event: Idx:65464 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a78f8: bf00         	nop
+  2. 700a78fa: bf00         	nop
+  3. 700a78fc: bf00         	nop
+  4. 700a78fe: bf00         	nop
+  5. 700a7900: bf00         	nop
+  6. 700a7902: bf00         	nop
+  7. 700a7904: bf00         	nop
+  8. 700a7906: bf00         	nop
+  9. 700a7908: bf00         	nop
+  10. 700a790a: bf00         	nop
+  11. 700a790c: bf00         	nop
+  12. 700a790e: bf00         	nop
+  13. 700a7910: bf00         	nop
+  14. 700a7912: bf00         	nop
+  15. 700a7914: bf00         	nop
+
+P_HDR Event: Idx:65465 (Pattern: EEEEEEEEEEEEEEE, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7916: bf00         	nop
+  2. 700a7918: bf00         	nop
+  3. 700a791a: bf00         	nop
+  4. 700a791c: bf00         	nop
+  5. 700a791e: bf00         	nop
+  6. 700a7920: bf00         	nop
+  7. 700a7922: bf00         	nop
+  8. 700a7924: bf00         	nop
+  9. 700a7926: bf00         	nop
+  10. 700a7928: bf00         	nop
+  11. 700a792a: bf00         	nop
+  12. 700a792c: bf00         	nop
+  13. 700a792e: bf00         	nop
+  14. 700a7930: bf00         	nop
+  15. 700a7932: bf00         	nop
+
+P_HDR Event: Idx:65466 (Pattern: EEEEEEEEEN, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7934: bf00         	nop
+  2. 700a7936: bf00         	nop
+  3. 700a7938: bf00         	nop
+  4. 700a793a: bf00         	nop
+  5. 700a793c: bf00         	nop
+  6. 700a793e: bf00         	nop
+  7. 700a7940: bf00         	nop
+  8. 700a7942: bf00         	nop
+  9. 700a7944: bf00         	nop
+  10. 700a7946: f47f afcb    	bne.w	0x700a78e0 <tm_thread_locking_benchmark_thread+0x30> @ imm = #-0x6a
+
+P_HDR Event: Idx:65467 (Pattern: EEEEEEEEEEEEN, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a794a: f008 f8b1    	bl	0x700afab0 <tm_resume_scheduler> @ imm = #0x8162
+  2. 700afab0: f7f2 baee    	b.w	0x700a2090 <xTaskResumeAll> @ imm = #-0xda24
+  3. 700a2090: b580         	push	{r7, lr}
+  4. 700a2092: b084         	sub	sp, #0x10
+  5. 700a2094: 2000         	movs	r0, #0x0
+  6. 700a2096: 9003         	str	r0, [sp, #0xc]
+  7. 700a2098: 9002         	str	r0, [sp, #0x8]
+  8. 700a209a: f00c fa19    	bl	0x700ae4d0 <vTaskEnterCritical> @ imm = #0xc432
+  9. 700ae4d0: b672         	cpsid i
+  10. 700ae4d2: f242 7000    	movw	r0, #0x2700
+  11. 700ae4d6: f2c7 000b    	movt	r0, #0x700b
+  12. 700ae4da: 6800         	ldr	r0, [r0]
+  13. 700ae4dc: b178         	cbz	r0, 0x700ae4fe <vTaskEnterCritical+0x2e> @ imm = #0x1e
+
+P_HDR Event: Idx:65468 (Pattern: EEEEEEEEEEN, Function: vTaskEnterCritical)
+Executed Assembly Steps:
+  1. 700ae4de: e7ff         	b	0x700ae4e0 <vTaskEnterCritical+0x10> @ imm = #-0x2
+  2. 700ae4e0: f242 60bc    	movw	r0, #0x26bc
+  3. 700ae4e4: f2c7 000b    	movt	r0, #0x700b
+  4. 700ae4e8: 6802         	ldr	r2, [r0]
+  5. 700ae4ea: 6d51         	ldr	r1, [r2, #0x54]
+  6. 700ae4ec: 3101         	adds	r1, #0x1
+  7. 700ae4ee: 6551         	str	r1, [r2, #0x54]
+  8. 700ae4f0: 6800         	ldr	r0, [r0]
+  9. 700ae4f2: 6d40         	ldr	r0, [r0, #0x54]
+  10. 700ae4f4: 2801         	cmp	r0, #0x1
+  11. 700ae4f6: d101         	bne	0x700ae4fc <vTaskEnterCritical+0x2c> @ imm = #0x2
+
+P_HDR Event: Idx:65469 (Pattern: EEEE, Function: vTaskEnterCritical)
+Executed Assembly Steps:
+  1. 700ae4f8: e7ff         	b	0x700ae4fa <vTaskEnterCritical+0x2a> @ imm = #-0x2
+  2. 700ae4fa: e7ff         	b	0x700ae4fc <vTaskEnterCritical+0x2c> @ imm = #-0x2
+  3. 700ae4fc: e000         	b	0x700ae500 <vTaskEnterCritical+0x30> @ imm = #0x0
+  4. 700ae500: 4770         	bx	lr
+
+Sync: Idx:65470; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A209E ~[0xA209E];
+
+P_HDR Event: Idx:65474 (Pattern: EEEEEEEN, Function: xTaskResumeAll)
+Executed Assembly Steps:
+  1. 700a209e: f242 60e4    	movw	r0, #0x26e4
+  2. 700a20a2: f2c7 000b    	movt	r0, #0x700b
+  3. 700a20a6: 6801         	ldr	r1, [r0]
+  4. 700a20a8: 3901         	subs	r1, #0x1
+  5. 700a20aa: 6001         	str	r1, [r0]
+  6. 700a20ac: 6800         	ldr	r0, [r0]
+  7. 700a20ae: 2800         	cmp	r0, #0x0
+  8. 700a20b0: f040 808f    	bne.w	0x700a21d2 <xTaskResumeAll+0x142> @ imm = #0x11e
+
+P_HDR Event: Idx:65475 (Pattern: EEEEEN, Function: xTaskResumeAll)
+Executed Assembly Steps:
+  1. 700a20b4: e7ff         	b	0x700a20b6 <xTaskResumeAll+0x26> @ imm = #-0x2
+  2. 700a20b6: f242 60dc    	movw	r0, #0x26dc
+  3. 700a20ba: f2c7 000b    	movt	r0, #0x700b
+  4. 700a20be: 6800         	ldr	r0, [r0]
+  5. 700a20c0: 2800         	cmp	r0, #0x0
+  6. 700a20c2: f000 8085    	beq.w	0x700a21d0 <xTaskResumeAll+0x140> @ imm = #0x10a
+
+P_HDR Event: Idx:65476 (Pattern: EEEEEEEEEEEEEEE, Function: xTaskResumeAll)
+Executed Assembly Steps:
+  1. 700a20c6: e7ff         	b	0x700a20c8 <xTaskResumeAll+0x38> @ imm = #-0x2
+  2. 700a20c8: e7ff         	b	0x700a20ca <xTaskResumeAll+0x3a> @ imm = #-0x2
+  3. 700a20ca: f245 10e0    	movw	r0, #0x51e0
+  4. 700a20ce: f2c7 0008    	movt	r0, #0x7008
+  5. 700a20d2: 6800         	ldr	r0, [r0]
+  6. 700a20d4: 2800         	cmp	r0, #0x0
+  7. 700a20d6: d042         	beq	0x700a215e <xTaskResumeAll+0xce> @ imm = #0x84
+  8. 700a215e: 9803         	ldr	r0, [sp, #0xc]
+  9. 700a2160: b118         	cbz	r0, 0x700a216a <xTaskResumeAll+0xda> @ imm = #0x6
+  10. 700a216a: f242 60fc    	movw	r0, #0x26fc
+  11. 700a216e: f2c7 000b    	movt	r0, #0x700b
+  12. 700a2172: 6800         	ldr	r0, [r0]
+  13. 700a2174: 9001         	str	r0, [sp, #0x4]
+  14. 700a2176: 9801         	ldr	r0, [sp, #0x4]
+  15. 700a2178: b1e0         	cbz	r0, 0x700a21b4 <xTaskResumeAll+0x124> @ imm = #0x38
+
+P_HDR Event: Idx:65477 (Pattern: EEEEEEEEEEEEN, Function: xTaskResumeAll)
+Executed Assembly Steps:
+  1. 700a21b4: e7ff         	b	0x700a21b6 <xTaskResumeAll+0x126> @ imm = #-0x2
+  2. 700a21b6: f242 7010    	movw	r0, #0x2710
+  3. 700a21ba: f2c7 000b    	movt	r0, #0x700b
+  4. 700a21be: 6800         	ldr	r0, [r0]
+  5. 700a21c0: b120         	cbz	r0, 0x700a21cc <xTaskResumeAll+0x13c> @ imm = #0x8
+  6. 700a21cc: e7ff         	b	0x700a21ce <xTaskResumeAll+0x13e> @ imm = #-0x2
+  7. 700a21ce: e7ff         	b	0x700a21d0 <xTaskResumeAll+0x140> @ imm = #-0x2
+  8. 700a21d0: e000         	b	0x700a21d4 <xTaskResumeAll+0x144> @ imm = #0x0
+  9. 700a21d4: f00b fa3c    	bl	0x700ad650 <vTaskExitCritical> @ imm = #0xb478
+  10. 700ad650: f242 7000    	movw	r0, #0x2700
+  11. 700ad654: f2c7 000b    	movt	r0, #0x700b
+  12. 700ad658: 6800         	ldr	r0, [r0]
+  13. 700ad65a: b1d0         	cbz	r0, 0x700ad692 <vTaskExitCritical+0x42> @ imm = #0x34
+
+P_HDR Event: Idx:65478 (Pattern: EEEEEN, Function: vTaskExitCritical)
+Executed Assembly Steps:
+  1. 700ad65c: e7ff         	b	0x700ad65e <vTaskExitCritical+0xe> @ imm = #-0x2
+  2. 700ad65e: f242 60bc    	movw	r0, #0x26bc
+  3. 700ad662: f2c7 000b    	movt	r0, #0x700b
+  4. 700ad666: 6800         	ldr	r0, [r0]
+  5. 700ad668: 6d40         	ldr	r0, [r0, #0x54]
+  6. 700ad66a: b180         	cbz	r0, 0x700ad68e <vTaskExitCritical+0x3e> @ imm = #0x20
+
+P_HDR Event: Idx:65479 (Pattern: EEEEEEEEEN, Function: vTaskExitCritical)
+Executed Assembly Steps:
+  1. 700ad66c: e7ff         	b	0x700ad66e <vTaskExitCritical+0x1e> @ imm = #-0x2
+  2. 700ad66e: f242 60bc    	movw	r0, #0x26bc
+  3. 700ad672: f2c7 000b    	movt	r0, #0x700b
+  4. 700ad676: 6802         	ldr	r2, [r0]
+  5. 700ad678: 6d51         	ldr	r1, [r2, #0x54]
+  6. 700ad67a: 3901         	subs	r1, #0x1
+  7. 700ad67c: 6551         	str	r1, [r2, #0x54]
+  8. 700ad67e: 6800         	ldr	r0, [r0]
+  9. 700ad680: 6d40         	ldr	r0, [r0, #0x54]
+  10. 700ad682: b910         	cbnz	r0, 0x700ad68a <vTaskExitCritical+0x3a> @ imm = #0x4
+
+P_HDR Event: Idx:65480 (Pattern: EEEEEE, Function: vTaskExitCritical)
+Executed Assembly Steps:
+  1. 700ad684: e7ff         	b	0x700ad686 <vTaskExitCritical+0x36> @ imm = #-0x2
+  2. 700ad686: b662         	cpsie i
+  3. 700ad688: e000         	b	0x700ad68c <vTaskExitCritical+0x3c> @ imm = #0x0
+  4. 700ad68c: e000         	b	0x700ad690 <vTaskExitCritical+0x40> @ imm = #0x0
+  5. 700ad690: e000         	b	0x700ad694 <vTaskExitCritical+0x44> @ imm = #0x0
+  6. 700ad694: 4770         	bx	lr
+
+Sync: Idx:65481; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A21D8 ~[0x21D8];
+
+P_HDR Event: Idx:65483 (Pattern: EEE, Function: xTaskResumeAll)
+Executed Assembly Steps:
+  1. 700a21d8: 9802         	ldr	r0, [sp, #0x8]
+  2. 700a21da: b004         	add	sp, #0x10
+  3. 700a21dc: bd80         	pop	{r7, pc}
+
+Sync: Idx:65484; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A794E ~[0xA794E];
+
+P_HDR Event: Idx:65488 (Pattern: EEN, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a794e: 6820         	ldr	r0, [r4]
+  2. 700a7950: 2821         	cmp	r0, #0x21
+  3. 700a7952: f4bf afb5    	bhs.w	0x700a78c0 <tm_thread_locking_benchmark_thread+0x10> @ imm = #-0x96
+
+P_HDR Event: Idx:65489 (Pattern: E, Function: tm_thread_locking_benchmark_thread)
+Executed Assembly Steps:
+  1. 700a7956: 6820         	ldr	r0, [r4]
+
+Sync: Idx:65490; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A7956 ~[0x700A7956]; S; Exception=Debug Halt; ; Cancel prev instr
+
