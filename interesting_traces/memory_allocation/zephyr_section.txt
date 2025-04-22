@@ -1,0 +1,155 @@
+P_HDR Event: Idx:48912 (Pattern: EEEEEEEEEEEEEEE, Function: tm_memory_allocation_thread_0_entry)
+Executed Assembly Steps:
+  1. 70000184:	2800      	cmp	r0, #0
+  2. 70000186:	d0f2      	beq.n	7000016e <tm_memory_allocation_thread_0_entry+0xe>
+  3. 7000016e:	6823      	ldr	r3, [r4, #0]
+  4. 70000170:	3301      	adds	r3, #1
+  5. 70000172:	6023      	str	r3, [r4, #0]
+  6. 70000174:	2000      	movs	r0, #0
+  7. 70000176:	a901      	add	r1, sp, #4
+  8. 70000178:	f000 f914 	bl	700003a4 <tm_memory_pool_allocate>
+  9. 700003a4:	f247 5ce4 	movw	ip, #30180	; 0x75e4
+  10. 700003a8:	ebc0 00c0 	rsb	r0, r0, r0, lsl #3
+  11. 700003ac:	f2c7 0c00 	movt	ip, #28672	; 0x7000
+  12. 700003b0:	b508      	push	{r3, lr}
+  13. 700003b2:	2200      	movs	r2, #0
+  14. 700003b4:	2300      	movs	r3, #0
+  15. 700003b6:	eb0c 0080 	add.w	r0, ip, r0, lsl #2
+
+P_HDR Event: Idx:48913 (Pattern: EEEEEEEEEN, Function: tm_memory_pool_allocate)
+Executed Assembly Steps:
+  1. 700003ba:	f001 fa87 	bl	700018cc <k_mem_slab_alloc>
+  2. 700018cc:	b530      	push	{r4, r5, lr}
+  3. 700018ce:	4684      	mov	ip, r0
+  4. 700018d0:	b083      	sub	sp, #12
+  5. 700018d2:	460d      	mov	r5, r1
+  6. 700018d4:	f3ef 8100 	mrs	r1, CPSR
+  7. 700018d8:	f001 0180 	and.w	r1, r1, #128	; 0x80
+  8. 700018dc:	b672      	cpsid	i
+  9. 700018de:	68c4      	ldr	r4, [r0, #12]
+  10. 700018e0:	b164      	cbz	r4, 700018fc <k_mem_slab_alloc+0x30>
+
+P_HDR Event: Idx:48914 (Pattern: EEEEEEEN, Function: k_mem_slab_alloc)
+Executed Assembly Steps:
+  1. 700018e2:	602c      	str	r4, [r5, #0]
+  2. 700018e4:	6983      	ldr	r3, [r0, #24]
+  3. 700018e6:	2000      	movs	r0, #0
+  4. 700018e8:	6822      	ldr	r2, [r4, #0]
+  5. 700018ea:	f8cc 200c 	str.w	r2, [ip, #12]
+  6. 700018ee:	3301      	adds	r3, #1
+  7. 700018f0:	f8cc 3018 	str.w	r3, [ip, #24]
+  8. 700018f4:	b901      	cbnz	r1, 700018f8 <k_mem_slab_alloc+0x2c>
+
+P_HDR Event: Idx:48915 (Pattern: EEE, Function: k_mem_slab_alloc)
+Executed Assembly Steps:
+  1. 700018f6:	b662      	cpsie	i
+  2. 700018f8:	b003      	add	sp, #12
+  3. 700018fa:	bd30      	pop	{r4, r5, pc}
+
+Sync: Idx:48916; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700003BE ~[0x3BE];
+
+P_HDR Event: Idx:48918 (Pattern: EEN, Function: tm_memory_pool_allocate)
+Executed Assembly Steps:
+  1. 700003be:	3800      	subs	r0, #0
+  2. 700003c0:	bf18      	it	ne
+  3. 700003c2:	2001      	movne	r0, #1
+
+P_HDR Event: Idx:48919 (Pattern: E, Function: tm_memory_pool_allocate)
+Executed Assembly Steps:
+  1. 700003c4:	bd08      	pop	{r3, pc}
+
+Sync: Idx:48920; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x7000017C ~[0x17C];
+
+P_HDR Event: Idx:48922 (Pattern: EEEEEEEEEEEEEEE, Function: tm_memory_allocation_thread_0_entry)
+Executed Assembly Steps:
+  1. 7000017c:	9901      	ldr	r1, [sp, #4]
+  2. 7000017e:	2000      	movs	r0, #0
+  3. 70000180:	f000 f922 	bl	700003c8 <tm_memory_pool_deallocate>
+  4. 700003c8:	b508      	push	{r3, lr}
+  5. 700003ca:	f247 53e4 	movw	r3, #30180	; 0x75e4
+  6. 700003ce:	ebc0 00c0 	rsb	r0, r0, r0, lsl #3
+  7. 700003d2:	f2c7 0300 	movt	r3, #28672	; 0x7000
+  8. 700003d6:	eb03 0080 	add.w	r0, r3, r0, lsl #2
+  9. 700003da:	f001 faa7 	bl	7000192c <k_mem_slab_free>
+  10. 7000192c:	b5f0      	push	{r4, r5, r6, r7, lr}
+  11. 7000192e:	4604      	mov	r4, r0
+  12. 70001930:	b083      	sub	sp, #12
+  13. 70001932:	f3ef 8600 	mrs	r6, CPSR
+  14. 70001936:	f006 0680 	and.w	r6, r6, #128	; 0x80
+  15. 7000193a:	b672      	cpsid	i
+
+P_HDR Event: Idx:48923 (Pattern: EN, Function: k_mem_slab_free)
+Executed Assembly Steps:
+  1. 7000193c:	68c5      	ldr	r5, [r0, #12]
+  2. 7000193e:	b145      	cbz	r5, 70001952 <k_mem_slab_free+0x26>
+
+P_HDR Event: Idx:48924 (Pattern: EEEEEN, Function: k_mem_slab_free)
+Executed Assembly Steps:
+  1. 70001940:	600d      	str	r5, [r1, #0]
+  2. 70001942:	69a3      	ldr	r3, [r4, #24]
+  3. 70001944:	60e1      	str	r1, [r4, #12]
+  4. 70001946:	3b01      	subs	r3, #1
+  5. 70001948:	61a3      	str	r3, [r4, #24]
+  6. 7000194a:	b906      	cbnz	r6, 7000194e <k_mem_slab_free+0x22>
+
+P_HDR Event: Idx:48925 (Pattern: E, Function: k_mem_slab_free)
+Executed Assembly Steps:
+  1. 7000194c:	b662      	cpsie	i
+
+Sync: Idx:48926; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x00000018 ~[0x18]; ISA=ARM(32); S; Exception=IRQ;
+
+P_HDR Event: Idx:48933 (Pattern: E, Function: k_mem_slab_free)
+Executed Assembly Steps:
+  1. 7000194e:	b003      	add	sp, #12
+
+Sync: Idx:48934; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700008F0 ~[0x700008F0];
+
+P_HDR Event: Idx:48939 (Pattern: EEEEEEEEEEEEEEE, Function: _isr_wrapper)
+Executed Assembly Steps:
+  1. 700008f0:	e24ee004 	sub	lr, lr, #4
+  2. 700008f4:	f96d051f 	srsdb	sp!, #31
+  3. 700008f8:	f102001f 	cps	#31
+  4. 700008fc:	e92d500f 	push	{r0, r1, r2, r3, ip, lr}
+  5. 70000900:	f1020013 	cps	#19
+  6. 70000904:	e52de004 	push	{lr}		; (str lr, [sp, #-4]!)
+  7. 70000908:	e20d3004 	and	r3, sp, #4
+  8. 7000090c:	e04dd003 	sub	sp, sp, r3
+  9. 70000910:	e92d000c 	push	{r2, r3}
+  10. 70000914:	ee1d2f70 	mrc	15, 0, r2, cr13, cr0, {3}
+  11. 70000918:	e3c22003 	bic	r2, r2, #3
+  12. 7000091c:	e5920000 	ldr	r0, [r2]
+  13. 70000920:	e2800001 	add	r0, r0, #1
+  14. 70000924:	e5820000 	str	r0, [r2]
+  15. 70000928:	faffff1b 	blx	7000059c <z_soc_irq_get_active>
+
+Sync: Idx:48940; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x7000059C ~[0x7000059C]; ISA=Thumb2;
+
+P_HDR Event: Idx:48946 (Pattern: EEEEEEEEEEN, Function: z_soc_irq_get_active)
+Executed Assembly Steps:
+  1. 7000059c:	f000 bb4c 	b.w	70000c38 <z_vim_irq_get_active>
+  2. 70000c38:	2318      	movs	r3, #24
+  3. 70000c3a:	f6c2 73ff 	movt	r3, #12287	; 0x2fff
+  4. 70000c3e:	681b      	ldr	r3, [r3, #0]
+  5. 70000c40:	f3bf 8f5f 	dmb	sy
+  6. 70000c44:	2320      	movs	r3, #32
+  7. 70000c46:	f6c2 73ff 	movt	r3, #12287	; 0x2fff
+  8. 70000c4a:	681b      	ldr	r3, [r3, #0]
+  9. 70000c4c:	f3bf 8f5f 	dmb	sy
+  10. 70000c50:	2b00      	cmp	r3, #0
+  11. 70000c52:	da14      	bge.n	70000c7e <z_vim_irq_get_active+0x46>
+
+P_HDR Event: Idx:48947 (Pattern: EEEEEEEEEEEN, Function: z_vim_irq_get_active)
+Executed Assembly Steps:
+  1. 70000c54:	f3c3 0009 	ubfx	r0, r3, #0, #10
+  2. 70000c58:	f3bf 8f5f 	dmb	sy
+  3. 70000c5c:	2101      	movs	r1, #1
+  4. 70000c5e:	f44f 6282 	mov.w	r2, #1040	; 0x410
+  5. 70000c62:	f003 0c1f 	and.w	ip, r3, #31
+  6. 70000c66:	f6c2 72ff 	movt	r2, #12287	; 0x2fff
+  7. 70000c6a:	f403 7378 	and.w	r3, r3, #992	; 0x3e0
+  8. 70000c6e:	fa01 f10c 	lsl.w	r1, r1, ip
+  9. 70000c72:	441a      	add	r2, r3
+  10. 70000c74:	6011      	str	r1, [r2, #0]
+  11. 70000c76:	f5b0 7f08 	cmp.w	r0, #544	; 0x220
+  12. 70000c7a:	d200      	bcs.n	70000c7e <z_vim_irq_get_active+0x46>
+

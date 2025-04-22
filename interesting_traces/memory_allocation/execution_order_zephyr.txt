@@ -1,0 +1,16 @@
+Enter tm_memory_allocation_thread_0_entry
+Enter tm_memory_pool_allocate
+Enter k_mem_slab_alloc
+Exit k_mem_slab_alloc
+Exit tm_memory_pool_allocate
+Enter tm_memory_pool_deallocate
+Exit tm_memory_pool_deallocate
+Enter k_mem_slab_free
+Enter _isr_wrapper
+Enter z_soc_irq_get_active
+Enter z_vim_irq_get_active
+Exit z_vim_irq_get_active
+Exit z_soc_irq_get_active
+Exit _isr_wrapper
+Exit k_mem_slab_free
+Exit tm_memory_allocation_thread_0_entry

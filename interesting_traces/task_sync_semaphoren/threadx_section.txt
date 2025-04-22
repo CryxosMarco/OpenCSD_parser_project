@@ -1,0 +1,1131 @@
+
+P_HDR Event: Idx:65174 (Pattern: EE, Function: writer_task2)
+Executed Assembly Steps:
+  1. 700b2d0e: 4620         	mov	r0, r4
+  2. 700b2d10: f000 ff9e    	bl	0x700b3c50 <tm_pmu_profile_start> @ imm = #0xf3c
+
+Sync: Idx:65175; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2D14 ~[0x700B2D14]; S; Exception=Debug Halt; ; Cancel prev instr
+
+Sync: Idx:65181; ID:10;	I_SYNC : Instruction Packet synchronisation.; (Debug Exit); Addr=0x700b4800; S;  ISA=ARM(32);
+
+P_HDR Event: Idx:65188 (Pattern: EEEEEEEEEEEN, Function: HwiP_irq_handler)
+Executed Assembly Steps:
+  1. 700b4800: eaffecfa     	b	0x700afbf0 <_tx_thread_context_save> @ imm = #-0x4c18
+  2. 700afbf0: e92d000f     	push	{r0, r1, r2, r3}
+  3. 700afbf4: e59f305c     	ldr	r3, [pc, #0x5c]         @ 0x700afc58 <__tx_thread_idle_system_save+0xc>
+  4. 700afbf8: e5932000     	ldr	r2, [r3]
+  5. 700afbfc: e3520000     	cmp	r2, #0
+  6. 700afc00: 0a000006     	beq	0x700afc20 <__tx_thread_not_nested_save> @ imm = #0x18
+  7. 700afc20: e2822001     	add	r2, r2, #1
+  8. 700afc24: e5832000     	str	r2, [r3]
+  9. 700afc28: e59f102c     	ldr	r1, [pc, #0x2c]         @ 0x700afc5c <__tx_thread_idle_system_save+0x10>
+  10. 700afc2c: e5910000     	ldr	r0, [r1]
+  11. 700afc30: e3500000     	cmp	r0, #0
+  12. 700afc34: 0a000004     	beq	0x700afc4c <__tx_thread_idle_system_save> @ imm = #0x10
+
+P_HDR Event: Idx:65189 (Pattern: EEEEEE, Function: __tx_thread_not_nested_save)
+Executed Assembly Steps:
+  1. 700afc38: e14f2000     	mrs	r2, spsr
+  2. 700afc3c: e24ee004     	sub	lr, lr, #4
+  3. 700afc40: e92d5404     	push	{r2, r10, r12, lr}
+  4. 700afc44: e3a0a000     	mov	r10, #0
+  5. 700afc48: ea0012ed     	b	0x700b4804 <__tx_irq_processing_return> @ imm = #0x4bb4
+  6. 700b4804: fafffeb1     	blx	0x700b42d0 <HwiP_irq_handler_c> @ imm = #-0x53c
+
+Sync: Idx:65190; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B42D0 ~[0x700B42D0]; ISA=Thumb2;
+
+P_HDR Event: Idx:65195 (Pattern: EEEEEEEEEEEEEEE, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b42d0: b580         	push	{r7, lr}
+  2. 700b42d2: b086         	sub	sp, #0x18
+  3. 700b42d4: a804         	add	r0, sp, #0x10
+  4. 700b42d6: f000 f843    	bl	0x700b4360 <HwiP_getIRQ> @ imm = #0x86
+  5. 700b4360: b084         	sub	sp, #0x10
+  6. 700b4362: 9003         	str	r0, [sp, #0xc]
+  7. 700b4364: f04f 30ff    	mov.w	r0, #0xffffffff
+  8. 700b4368: 9001         	str	r0, [sp, #0x4]
+  9. 700b436a: 9903         	ldr	r1, [sp, #0xc]
+  10. 700b436c: 2000         	movs	r0, #0x0
+  11. 700b436e: 6008         	str	r0, [r1]
+  12. 700b4370: f646 10ac    	movw	r0, #0x69ac
+  13. 700b4374: f2c7 000b    	movt	r0, #0x700b
+  14. 700b4378: 6800         	ldr	r0, [r0]
+  15. 700b437a: 3020         	adds	r0, #0x20
+
+P_HDR Event: Idx:65196 (Pattern: EEEEEEEN, Function: HwiP_getIRQ)
+Executed Assembly Steps:
+  1. 700b437c: 9002         	str	r0, [sp, #0x8]
+  2. 700b437e: 9802         	ldr	r0, [sp, #0x8]
+  3. 700b4380: 6800         	ldr	r0, [r0]
+  4. 700b4382: 9000         	str	r0, [sp]
+  5. 700b4384: f89d 0003    	ldrb.w	r0, [sp, #0x3]
+  6. 700b4388: 0600         	lsls	r0, r0, #0x18
+  7. 700b438a: 2800         	cmp	r0, #0x0
+  8. 700b438c: d507         	bpl	0x700b439e <HwiP_getIRQ+0x3e> @ imm = #0xe
+
+P_HDR Event: Idx:65197 (Pattern: EEEEEEEEEE, Function: HwiP_getIRQ)
+Executed Assembly Steps:
+  1. 700b438e: e7ff         	b	0x700b4390 <HwiP_getIRQ+0x30> @ imm = #-0x2
+  2. 700b4390: f89d 0000    	ldrb.w	r0, [sp]
+  3. 700b4394: 9903         	ldr	r1, [sp, #0xc]
+  4. 700b4396: 6008         	str	r0, [r1]
+  5. 700b4398: 2000         	movs	r0, #0x0
+  6. 700b439a: 9001         	str	r0, [sp, #0x4]
+  7. 700b439c: e7ff         	b	0x700b439e <HwiP_getIRQ+0x3e> @ imm = #-0x2
+  8. 700b439e: 9801         	ldr	r0, [sp, #0x4]
+  9. 700b43a0: b004         	add	sp, #0x10
+  10. 700b43a2: 4770         	bx	lr
+
+Sync: Idx:65198; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B42DA ~[0x5A];
+
+P_HDR Event: Idx:65200 (Pattern: EEN, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b42da: 9005         	str	r0, [sp, #0x14]
+  2. 700b42dc: 9805         	ldr	r0, [sp, #0x14]
+  3. 700b42de: bb68         	cbnz	r0, 0x700b433c <HwiP_irq_handler_c+0x6c> @ imm = #0x5a
+
+P_HDR Event: Idx:65201 (Pattern: EEEEEEEEEEEEEEE, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b42e0: e7ff         	b	0x700b42e2 <HwiP_irq_handler_c+0x12> @ imm = #-0x2
+  2. 700b42e2: 9804         	ldr	r0, [sp, #0x10]
+  3. 700b42e4: f000 f864    	bl	0x700b43b0 <HwiP_isPulse> @ imm = #0xc8
+  4. 700b43b0: b083         	sub	sp, #0xc
+  5. 700b43b2: 9002         	str	r0, [sp, #0x8]
+  6. 700b43b4: f646 10ac    	movw	r0, #0x69ac
+  7. 700b43b8: f2c7 000b    	movt	r0, #0x700b
+  8. 700b43bc: 6801         	ldr	r1, [r0]
+  9. 700b43be: 9802         	ldr	r0, [sp, #0x8]
+  10. 700b43c0: f400 70f0    	and	r0, r0, #0x1e0
+  11. 700b43c4: 4408         	add	r0, r1
+  12. 700b43c6: f200 401c    	addw	r0, r0, #0x41c
+  13. 700b43ca: 9001         	str	r0, [sp, #0x4]
+  14. 700b43cc: 9802         	ldr	r0, [sp, #0x8]
+  15. 700b43ce: f000 001f    	and	r0, r0, #0x1f
+
+P_HDR Event: Idx:65202 (Pattern: EEEEEEEE, Function: HwiP_isPulse)
+Executed Assembly Steps:
+  1. 700b43d2: 9000         	str	r0, [sp]
+  2. 700b43d4: 9801         	ldr	r0, [sp, #0x4]
+  3. 700b43d6: 6800         	ldr	r0, [r0]
+  4. 700b43d8: 9900         	ldr	r1, [sp]
+  5. 700b43da: 40c8         	lsrs	r0, r1
+  6. 700b43dc: f000 0001    	and	r0, r0, #0x1
+  7. 700b43e0: b003         	add	sp, #0xc
+  8. 700b43e2: 4770         	bx	lr
+
+Sync: Idx:65203; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B42E8 ~[0x68];
+
+P_HDR Event: Idx:65204 (Pattern: EEEEEEEEEEEEEN, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b42e8: 9003         	str	r0, [sp, #0xc]
+  2. 700b42ea: 9803         	ldr	r0, [sp, #0xc]
+  3. 700b42ec: b120         	cbz	r0, 0x700b42f8 <HwiP_irq_handler_c+0x28> @ imm = #0x8
+  4. 700b42f8: 9904         	ldr	r1, [sp, #0x10]
+  5. 700b42fa: f648 700c    	movw	r0, #0x8f0c
+  6. 700b42fe: f2c7 0008    	movt	r0, #0x7008
+  7. 700b4302: f850 1021    	ldr.w	r1, [r0, r1, lsl #2]
+  8. 700b4306: 9102         	str	r1, [sp, #0x8]
+  9. 700b4308: 9904         	ldr	r1, [sp, #0x10]
+  10. 700b430a: eb00 0081    	add.w	r0, r0, r1, lsl #2
+  11. 700b430e: f8d0 0400    	ldr.w	r0, [r0, #0x400]
+  12. 700b4312: 9001         	str	r0, [sp, #0x4]
+  13. 700b4314: 9802         	ldr	r0, [sp, #0x8]
+  14. 700b4316: b120         	cbz	r0, 0x700b4322 <HwiP_irq_handler_c+0x52> @ imm = #0x8
+
+P_HDR Event: Idx:65205 (Pattern: EEEE, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b4318: e7ff         	b	0x700b431a <HwiP_irq_handler_c+0x4a> @ imm = #-0x2
+  2. 700b431a: 9902         	ldr	r1, [sp, #0x8]
+  3. 700b431c: 9801         	ldr	r0, [sp, #0x4]
+  4. 700b431e: 4788         	blx	r1
+
+Sync: Idx:65206; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2860 ~[0xB2860];
+
+P_HDR Event: Idx:65209 (Pattern: EEEEEEEEEEEE, Function: ClockP_timerTickIsr)
+Executed Assembly Steps:
+  1. 700b2860: b580         	push	{r7, lr}
+  2. 700b2862: b082         	sub	sp, #0x8
+  3. 700b2864: 9001         	str	r0, [sp, #0x4]
+  4. 700b2866: f64a 01f0    	movw	r1, #0xa8f0
+  5. 700b286a: f2c7 0108    	movt	r1, #0x7008
+  6. 700b286e: 680a         	ldr	r2, [r1]
+  7. 700b2870: 6848         	ldr	r0, [r1, #0x4]
+  8. 700b2872: 3201         	adds	r2, #0x1
+  9. 700b2874: f140 0000    	adc	r0, r0, #0x0
+  10. 700b2878: 600a         	str	r2, [r1]
+  11. 700b287a: 6048         	str	r0, [r1, #0x4]
+  12. 700b287c: f7f7 ef8c    	blx	0x700aa798 <_tx_timer_interrupt> @ imm = #-0x80e8
+
+Sync: Idx:65210; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AA798 ~[0x700AA798]; ISA=ARM(32);
+
+P_HDR Event: Idx:65216 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_timer_interrupt)
+Executed Assembly Steps:
+  1. 700aa798: e59f10cc     	ldr	r1, [pc, #0xcc]         @ 0x700aa86c <__tx_timer_nothing_expired+0x4>
+  2. 700aa79c: e5910000     	ldr	r0, [r1]
+  3. 700aa7a0: e2800001     	add	r0, r0, #1
+  4. 700aa7a4: e5810000     	str	r0, [r1]
+  5. 700aa7a8: e59f30c0     	ldr	r3, [pc, #0xc0]         @ 0x700aa870 <__tx_timer_nothing_expired+0x8>
+  6. 700aa7ac: e5932000     	ldr	r2, [r3]
+  7. 700aa7b0: e3520000     	cmp	r2, #0
+  8. 700aa7b4: 0a000006     	beq	0x700aa7d4 <__tx_timer_no_time_slice> @ imm = #0x18
+  9. 700aa7d4: e59f109c     	ldr	r1, [pc, #0x9c]         @ 0x700aa878 <__tx_timer_nothing_expired+0x10>
+  10. 700aa7d8: e5910000     	ldr	r0, [r1]
+  11. 700aa7dc: e5902000     	ldr	r2, [r0]
+  12. 700aa7e0: e3520000     	cmp	r2, #0
+  13. 700aa7e4: 0a000003     	beq	0x700aa7f8 <__tx_timer_no_timer> @ imm = #0xc
+  14. 700aa7f8: e2800004     	add	r0, r0, #4
+  15. 700aa7fc: e59f307c     	ldr	r3, [pc, #0x7c]         @ 0x700aa880 <__tx_timer_nothing_expired+0x18>
+
+P_HDR Event: Idx:65217 (Pattern: EEEEEEEN, Function: __tx_timer_no_timer)
+Executed Assembly Steps:
+  1. 700aa800: e5932000     	ldr	r2, [r3]
+  2. 700aa804: e1500002     	cmp	r0, r2
+  3. 700aa808: 1a000001     	bne	0x700aa814 <__tx_timer_skip_wrap> @ imm = #0x4
+  4. 700aa814: e5810000     	str	r0, [r1]
+  5. 700aa818: e59f3054     	ldr	r3, [pc, #0x54]         @ 0x700aa874 <__tx_timer_nothing_expired+0xc>
+  6. 700aa81c: e5932000     	ldr	r2, [r3]
+  7. 700aa820: e3520000     	cmp	r2, #0
+  8. 700aa824: 1a000003     	bne	0x700aa838 <__tx_something_expired> @ imm = #0xc
+
+P_HDR Event: Idx:65218 (Pattern: EEEEE, Function: __tx_timer_done)
+Executed Assembly Steps:
+  1. 700aa828: e59f104c     	ldr	r1, [pc, #0x4c]         @ 0x700aa87c <__tx_timer_nothing_expired+0x14>
+  2. 700aa82c: e5910000     	ldr	r0, [r1]
+  3. 700aa830: e3500000     	cmp	r0, #0
+  4. 700aa834: 0a00000b     	beq	0x700aa868 <__tx_timer_nothing_expired> @ imm = #0x2c
+  5. 700aa868: e12fff1e     	bx	lr
+
+Sync: Idx:65219; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2880 ~[0x700B2880]; ISA=Thumb2;
+
+P_HDR Event: Idx:65224 (Pattern: EEEEEEEEEEEEEEE, Function: ClockP_timerTickIsr)
+Executed Assembly Steps:
+  1. 700b2880: f646 00d8    	movw	r0, #0x68d8
+  2. 700b2884: f2c7 000b    	movt	r0, #0x700b
+  3. 700b2888: 6800         	ldr	r0, [r0]
+  4. 700b288a: f001 f8f9    	bl	0x700b3a80 <ClockP_timerClearOverflowInt> @ imm = #0x11f2
+  5. 700b3a80: b580         	push	{r7, lr}
+  6. 700b3a82: b082         	sub	sp, #0x8
+  7. 700b3a84: 9001         	str	r0, [sp, #0x4]
+  8. 700b3a86: 9801         	ldr	r0, [sp, #0x4]
+  9. 700b3a88: f7ff f902    	bl	0x700b2c90 <TimerP_clearOverflowInt> @ imm = #-0xdfc
+  10. 700b2c90: b083         	sub	sp, #0xc
+  11. 700b2c92: 9002         	str	r0, [sp, #0x8]
+  12. 700b2c94: 2002         	movs	r0, #0x2
+  13. 700b2c96: 9000         	str	r0, [sp]
+  14. 700b2c98: 9802         	ldr	r0, [sp, #0x8]
+  15. 700b2c9a: 3028         	adds	r0, #0x28
+
+P_HDR Event: Idx:65225 (Pattern: EEEEEEEEEEE, Function: TimerP_clearOverflowInt)
+Executed Assembly Steps:
+  1. 700b2c9c: 9001         	str	r0, [sp, #0x4]
+  2. 700b2c9e: 9800         	ldr	r0, [sp]
+  3. 700b2ca0: 9901         	ldr	r1, [sp, #0x4]
+  4. 700b2ca2: 6008         	str	r0, [r1]
+  5. 700b2ca4: 9801         	ldr	r0, [sp, #0x4]
+  6. 700b2ca6: 6800         	ldr	r0, [r0]
+  7. 700b2ca8: 9900         	ldr	r1, [sp]
+  8. 700b2caa: 4208         	tst	r0, r1
+  9. 700b2cac: d004         	beq	0x700b2cb8 <TimerP_clearOverflowInt+0x28> @ imm = #0x8
+  10. 700b2cb8: b003         	add	sp, #0xc
+  11. 700b2cba: 4770         	bx	lr
+
+Sync: Idx:65226; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B3A8C ~[0x3A8C];
+
+P_HDR Event: Idx:65228 (Pattern: EE, Function: ClockP_timerClearOverflowInt)
+Executed Assembly Steps:
+  1. 700b3a8c: b002         	add	sp, #0x8
+  2. 700b3a8e: bd80         	pop	{r7, pc}
+
+Sync: Idx:65229; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B288E ~[0x288E];
+
+P_HDR Event: Idx:65232 (Pattern: EE, Function: ClockP_timerTickIsr)
+Executed Assembly Steps:
+  1. 700b288e: b002         	add	sp, #0x8
+  2. 700b2890: bd80         	pop	{r7, pc}
+
+Sync: Idx:65233; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B4320 ~[0xB4320];
+
+P_HDR Event: Idx:65236 (Pattern: EE, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b4320: e7ff         	b	0x700b4322 <HwiP_irq_handler_c+0x52> @ imm = #-0x2
+  2. 700b4322: f000 e9a8    	blx	0x700b4674 <HwiP_disable> @ imm = #0x350
+
+Sync: Idx:65237; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B4674 ~[0x700B4674]; ISA=ARM(32);
+
+P_HDR Event: Idx:65242 (Pattern: EEEE, Function: HwiP_disable)
+Executed Assembly Steps:
+  1. 700b4674: e10f0000     	mrs	r0, apsr
+  2. 700b4678: e380c080     	orr	r12, r0, #128
+  3. 700b467c: e129f00c     	msr	CPSR_fc, r12
+  4. 700b4680: e12fff1e     	bx	lr
+
+Sync: Idx:65243; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B4326 ~[0x700B4326]; ISA=Thumb2;
+
+P_HDR Event: Idx:65249 (Pattern: EN, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b4326: 9803         	ldr	r0, [sp, #0xc]
+  2. 700b4328: b920         	cbnz	r0, 0x700b4334 <HwiP_irq_handler_c+0x64> @ imm = #0x8
+
+P_HDR Event: Idx:65250 (Pattern: EEEEEEEEEEEEEEE, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b432a: e7ff         	b	0x700b432c <HwiP_irq_handler_c+0x5c> @ imm = #-0x2
+  2. 700b432c: 9804         	ldr	r0, [sp, #0x10]
+  3. 700b432e: f7ff fd4f    	bl	0x700b3dd0 <HwiP_clearInt> @ imm = #-0x562
+  4. 700b3dd0: b083         	sub	sp, #0xc
+  5. 700b3dd2: 9002         	str	r0, [sp, #0x8]
+  6. 700b3dd4: f646 10ac    	movw	r0, #0x69ac
+  7. 700b3dd8: f2c7 000b    	movt	r0, #0x700b
+  8. 700b3ddc: 6801         	ldr	r1, [r0]
+  9. 700b3dde: 9802         	ldr	r0, [sp, #0x8]
+  10. 700b3de0: f400 70f0    	and	r0, r0, #0x1e0
+  11. 700b3de4: 4408         	add	r0, r1
+  12. 700b3de6: f200 4004    	addw	r0, r0, #0x404
+  13. 700b3dea: 9001         	str	r0, [sp, #0x4]
+  14. 700b3dec: 9802         	ldr	r0, [sp, #0x8]
+  15. 700b3dee: f000 001f    	and	r0, r0, #0x1f
+
+P_HDR Event: Idx:65251 (Pattern: EEEEEEEE, Function: HwiP_clearInt)
+Executed Assembly Steps:
+  1. 700b3df2: 9000         	str	r0, [sp]
+  2. 700b3df4: 9900         	ldr	r1, [sp]
+  3. 700b3df6: 2001         	movs	r0, #0x1
+  4. 700b3df8: 4088         	lsls	r0, r1
+  5. 700b3dfa: 9901         	ldr	r1, [sp, #0x4]
+  6. 700b3dfc: 6008         	str	r0, [r1]
+  7. 700b3dfe: b003         	add	sp, #0xc
+  8. 700b3e00: 4770         	bx	lr
+
+Sync: Idx:65252; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B4332 ~[0x32];
+
+P_HDR Event: Idx:65253 (Pattern: EEEEEEEEEEEEEEE, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b4332: e7ff         	b	0x700b4334 <HwiP_irq_handler_c+0x64> @ imm = #-0x2
+  2. 700b4334: 9804         	ldr	r0, [sp, #0x10]
+  3. 700b4336: f000 f85b    	bl	0x700b43f0 <HwiP_ackIRQ> @ imm = #0xb6
+  4. 700b43f0: b082         	sub	sp, #0x8
+  5. 700b43f2: 9001         	str	r0, [sp, #0x4]
+  6. 700b43f4: f646 10ac    	movw	r0, #0x69ac
+  7. 700b43f8: f2c7 000b    	movt	r0, #0x700b
+  8. 700b43fc: 6800         	ldr	r0, [r0]
+  9. 700b43fe: 3018         	adds	r0, #0x18
+  10. 700b4400: 9000         	str	r0, [sp]
+  11. 700b4402: 9801         	ldr	r0, [sp, #0x4]
+  12. 700b4404: 9900         	ldr	r1, [sp]
+  13. 700b4406: 6008         	str	r0, [r1]
+  14. 700b4408: b002         	add	sp, #0x8
+  15. 700b440a: 4770         	bx	lr
+
+Sync: Idx:65254; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B433A ~[0x3A];
+
+P_HDR Event: Idx:65255 (Pattern: EEE, Function: HwiP_irq_handler_c)
+Executed Assembly Steps:
+  1. 700b433a: e00c         	b	0x700b4356 <HwiP_irq_handler_c+0x86> @ imm = #0x18
+  2. 700b4356: b006         	add	sp, #0x18
+  3. 700b4358: bd80         	pop	{r7, pc}
+
+Sync: Idx:65256; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B4808 ~[0x700B4808]; ISA=ARM(32);
+
+P_HDR Event: Idx:65261 (Pattern: EEEEEEEEEEEN, Function: __tx_irq_processing_return)
+Executed Assembly Steps:
+  1. 700b4808: eaffd611     	b	0x700aa054 <_tx_thread_context_restore> @ imm = #-0xa7bc
+  2. 700aa054: f10c0080     	cpsid	i
+  3. 700aa058: e59f30ec     	ldr	r3, [pc, #0xec]         @ 0x700aa14c <__tx_thread_idle_system_restore+0xc>
+  4. 700aa05c: e5932000     	ldr	r2, [r3]
+  5. 700aa060: e2422001     	sub	r2, r2, #1
+  6. 700aa064: e5832000     	str	r2, [r3]
+  7. 700aa068: e3520000     	cmp	r2, #0
+  8. 700aa06c: 0a000003     	beq	0x700aa080 <__tx_thread_not_nested_restore> @ imm = #0xc
+  9. 700aa080: e59f10c8     	ldr	r1, [pc, #0xc8]         @ 0x700aa150 <__tx_thread_idle_system_restore+0x10>
+  10. 700aa084: e5910000     	ldr	r0, [r1]
+  11. 700aa088: e3500000     	cmp	r0, #0
+  12. 700aa08c: 0a00002b     	beq	0x700aa140 <__tx_thread_idle_system_restore> @ imm = #0xac
+
+P_HDR Event: Idx:65262 (Pattern: EEEN, Function: __tx_thread_not_nested_restore)
+Executed Assembly Steps:
+  1. 700aa090: e59f30bc     	ldr	r3, [pc, #0xbc]         @ 0x700aa154 <__tx_thread_idle_system_restore+0x14>
+  2. 700aa094: e5932000     	ldr	r2, [r3]
+  3. 700aa098: e3520000     	cmp	r2, #0
+  4. 700aa09c: 1a000003     	bne	0x700aa0b0 <__tx_thread_no_preempt_restore> @ imm = #0xc
+
+P_HDR Event: Idx:65264 (Pattern: EEEN, Function: __tx_thread_not_nested_restore)
+Executed Assembly Steps:
+  1. 700aa0a0: e59f30b0     	ldr	r3, [pc, #0xb0]         @ 0x700aa158 <__tx_thread_idle_system_restore+0x18>
+  2. 700aa0a4: e5932000     	ldr	r2, [r3]
+  3. 700aa0a8: e1500002     	cmp	r0, r2
+  4. 700aa0ac: 1a000003     	bne	0x700aa0c0 <__tx_thread_preempt_restore> @ imm = #0xc
+
+P_HDR Event: Idx:65265 (Pattern: EEEE, Function: __tx_thread_no_preempt_restore)
+Executed Assembly Steps:
+  1. 700aa0b0: e8bd5401     	pop	{r0, r10, r12, lr}
+  2. 700aa0b4: e16ff000     	msr	SPSR_fsxc, r0
+  3. 700aa0b8: e8bd000f     	pop	{r0, r1, r2, r3}
+  4. 700aa0bc: e1b0f00e     	movs	pc, lr
+
+Sync: Idx:65266; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2D10 ~[0x700B2D10]; ISA=Thumb2;
+
+P_HDR Event: Idx:65271 (Pattern: EEEEEEEEEEEEEE, Function: writer_task2)
+Executed Assembly Steps:
+  1. 700b2d10: f000 ff9e    	bl	0x700b3c50 <tm_pmu_profile_start> @ imm = #0xf3c
+  2. 700b3c50: f7fa b89e    	b.w	0x700add90 <PMU_profileStart> @ imm = #-0x5ec4
+  3. 700add90: b580         	push	{r7, lr}
+  4. 700add92: b088         	sub	sp, #0x20
+  5. 700add94: 9006         	str	r0, [sp, #0x18]
+  6. 700add96: f248 2000    	movw	r0, #0x8200
+  7. 700add9a: f2c7 0008    	movt	r0, #0x7008
+  8. 700add9e: 6801         	ldr	r1, [r0]
+  9. 700adda0: 9105         	str	r1, [sp, #0x14]
+  10. 700adda2: 6881         	ldr	r1, [r0, #0x8]
+  11. 700adda4: 9103         	str	r1, [sp, #0xc]
+  12. 700adda6: 6841         	ldr	r1, [r0, #0x4]
+  13. 700adda8: 9102         	str	r1, [sp, #0x8]
+  14. 700addaa: 6800         	ldr	r0, [r0]
+
+P_HDR Event: Idx:65272 (Pattern: EEEEEEEEEEEEEEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700addac: 2840         	cmp	r0, #0x40
+  2. 700addae: d304         	blo	0x700addba <PMU_profileStart+0x2a> @ imm = #0x8
+  3. 700addba: 9805         	ldr	r0, [sp, #0x14]
+  4. 700addbc: f248 2200    	movw	r2, #0x8200
+  5. 700addc0: f2c7 0208    	movt	r2, #0x7008
+  6. 700addc4: 2134         	movs	r1, #0x34
+  7. 700addc6: fb00 2001    	mla	r0, r0, r1, r2
+  8. 700addca: 300c         	adds	r0, #0xc
+  9. 700addcc: 9001         	str	r0, [sp, #0x4]
+  10. 700addce: 9806         	ldr	r0, [sp, #0x18]
+  11. 700addd0: 9901         	ldr	r1, [sp, #0x4]
+  12. 700addd2: 6308         	str	r0, [r1, #0x30]
+  13. 700addd4: f005 feac    	bl	0x700b3b30 <PMU_resetCounters> @ imm = #0x5d58
+  14. 700b3b30: b580         	push	{r7, lr}
+  15. 700b3b32: f7f3 ed98    	blx	0x700a7664 <CSL_armR5PmuResetCycleCnt> @ imm = #-0xc4d0
+
+Sync: Idx:65273; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A7664 ~[0x700A7664]; ISA=ARM(32);
+
+P_HDR Event: Idx:65278 (Pattern: EEEE, Function: CSL_armR5PmuResetCycleCnt)
+Executed Assembly Steps:
+  1. 700a7664: ee190f1c     	mrc	p15, #0x0, r0, c9, c12, #0x0
+  2. 700a7668: e3800004     	orr	r0, r0, #4
+  3. 700a766c: ee090f1c     	mcr	p15, #0x0, r0, c9, c12, #0x0
+  4. 700a7670: e12fff1e     	bx	lr
+
+Sync: Idx:65280; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B3B36 ~[0x700B3B36]; ISA=Thumb2;
+
+P_HDR Event: Idx:65285 (Pattern: E, Function: PMU_resetCounters)
+Executed Assembly Steps:
+  1. 700b3b36: f7f3 ed9e    	blx	0x700a7674 <CSL_armR5PmuResetCntrs> @ imm = #-0xc4c4
+
+Sync: Idx:65286; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A7674 ~[0x700A7674]; ISA=ARM(32);
+
+P_HDR Event: Idx:65291 (Pattern: EEEE, Function: CSL_armR5PmuResetCntrs)
+Executed Assembly Steps:
+  1. 700a7674: ee190f1c     	mrc	p15, #0x0, r0, c9, c12, #0x0
+  2. 700a7678: e3800002     	orr	r0, r0, #2
+  3. 700a767c: ee090f1c     	mcr	p15, #0x0, r0, c9, c12, #0x0
+  4. 700a7680: e12fff1e     	bx	lr
+
+Sync: Idx:65292; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B3B3A ~[0x700B3B3A]; ISA=Thumb2;
+
+P_HDR Event: Idx:65298 (Pattern: E, Function: PMU_resetCounters)
+Executed Assembly Steps:
+  1. 700b3b3a: bd80         	pop	{r7, pc}
+
+Sync: Idx:65299; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700ADDD8 ~[0xADDD8];
+
+P_HDR Event: Idx:65302 (Pattern: EEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700addd8: 9802         	ldr	r0, [sp, #0x8]
+  2. 700addda: 2801         	cmp	r0, #0x1
+  3. 700adddc: d106         	bne	0x700addec <PMU_profileStart+0x5c> @ imm = #0xc
+
+P_HDR Event: Idx:65303 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700addde: e7ff         	b	0x700adde0 <PMU_profileStart+0x50> @ imm = #-0x2
+  2. 700adde0: 201f         	movs	r0, #0x1f
+  3. 700adde2: f7f9 ec14    	blx	0x700a760c <CSL_armR5PmuReadCntr> @ imm = #-0x67d8
+
+Sync: Idx:65304; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A760C ~[0x700A760C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65309 (Pattern: EEEEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a760c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a7610: e350001f     	cmp	r0, #31
+  3. 700a7614: 0a000002     	beq	0x700a7624 <armR5PmuReadCntr_cycles> @ imm = #0x8
+  4. 700a7624: ee190f1d     	mrc	p15, #0x0, r0, c9, c13, #0x0
+  5. 700a7628: e49de004     	ldr	lr, [sp], #4
+  6. 700a762c: e12fff1e     	bx	lr
+
+Sync: Idx:65310; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700ADDE6 ~[0x700ADDE6]; ISA=Thumb2;
+
+P_HDR Event: Idx:65316 (Pattern: EEEEEEEEEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700adde6: 9901         	ldr	r1, [sp, #0x4]
+  2. 700adde8: 62c8         	str	r0, [r1, #0x2c]
+  3. 700addea: e7ff         	b	0x700addec <PMU_profileStart+0x5c> @ imm = #-0x2
+  4. 700addec: 2000         	movs	r0, #0x0
+  5. 700addee: 9004         	str	r0, [sp, #0x10]
+  6. 700addf0: e7ff         	b	0x700addf2 <PMU_profileStart+0x62> @ imm = #-0x2
+  7. 700addf2: 9804         	ldr	r0, [sp, #0x10]
+  8. 700addf4: 9903         	ldr	r1, [sp, #0xc]
+  9. 700addf6: 4288         	cmp	r0, r1
+  10. 700addf8: d20f         	bhs	0x700ade1a <PMU_profileStart+0x8a> @ imm = #0x1e
+
+P_HDR Event: Idx:65317 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700addfa: e7ff         	b	0x700addfc <PMU_profileStart+0x6c> @ imm = #-0x2
+  2. 700addfc: 9804         	ldr	r0, [sp, #0x10]
+  3. 700addfe: f7f9 ec06    	blx	0x700a760c <CSL_armR5PmuReadCntr> @ imm = #-0x67f4
+
+Sync: Idx:65318; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A760C ~[0x700A760C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65323 (Pattern: EEN, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a760c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a7610: e350001f     	cmp	r0, #31
+  3. 700a7614: 0a000002     	beq	0x700a7624 <armR5PmuReadCntr_cycles> @ imm = #0x8
+
+P_HDR Event: Idx:65324 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a7618: ebffffc5     	bl	0x700a7534 <CSL_armR5PmuSelectCntr> @ imm = #-0xec
+  2. 700a7534: e200001f     	and	r0, r0, #31
+  3. 700a7538: ee090fbc     	mcr	p15, #0x0, r0, c9, c12, #0x5
+  4. 700a753c: e12fff1e     	bx	lr
+
+Sync: Idx:65325; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A761C ~[0x1C];
+
+P_HDR Event: Idx:65326 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a761c: ee190f5d     	mrc	p15, #0x0, r0, c9, c13, #0x2
+  2. 700a7620: ea000000     	b	0x700a7628 <armR5PmuReadCntr_00> @ imm = #0x0
+  3. 700a7628: e49de004     	ldr	lr, [sp], #4
+  4. 700a762c: e12fff1e     	bx	lr
+
+Sync: Idx:65328; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700ADE02 ~[0x700ADE02]; ISA=Thumb2;
+
+P_HDR Event: Idx:65333 (Pattern: EEEEEEEEEEEEEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700ade02: 9901         	ldr	r1, [sp, #0x4]
+  2. 700ade04: 9a04         	ldr	r2, [sp, #0x10]
+  3. 700ade06: eb02 0242    	add.w	r2, r2, r2, lsl #1
+  4. 700ade0a: eb01 0182    	add.w	r1, r1, r2, lsl #2
+  5. 700ade0e: 6088         	str	r0, [r1, #0x8]
+  6. 700ade10: e7ff         	b	0x700ade12 <PMU_profileStart+0x82> @ imm = #-0x2
+  7. 700ade12: 9804         	ldr	r0, [sp, #0x10]
+  8. 700ade14: 3001         	adds	r0, #0x1
+  9. 700ade16: 9004         	str	r0, [sp, #0x10]
+  10. 700ade18: e7eb         	b	0x700addf2 <PMU_profileStart+0x62> @ imm = #-0x2a
+  11. 700addf2: 9804         	ldr	r0, [sp, #0x10]
+  12. 700addf4: 9903         	ldr	r1, [sp, #0xc]
+  13. 700addf6: 4288         	cmp	r0, r1
+  14. 700addf8: d20f         	bhs	0x700ade1a <PMU_profileStart+0x8a> @ imm = #0x1e
+
+P_HDR Event: Idx:65334 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700addfa: e7ff         	b	0x700addfc <PMU_profileStart+0x6c> @ imm = #-0x2
+  2. 700addfc: 9804         	ldr	r0, [sp, #0x10]
+  3. 700addfe: f7f9 ec06    	blx	0x700a760c <CSL_armR5PmuReadCntr> @ imm = #-0x67f4
+
+Sync: Idx:65335; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A760C ~[0x700A760C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65340 (Pattern: EEN, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a760c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a7610: e350001f     	cmp	r0, #31
+  3. 700a7614: 0a000002     	beq	0x700a7624 <armR5PmuReadCntr_cycles> @ imm = #0x8
+
+P_HDR Event: Idx:65341 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a7618: ebffffc5     	bl	0x700a7534 <CSL_armR5PmuSelectCntr> @ imm = #-0xec
+  2. 700a7534: e200001f     	and	r0, r0, #31
+  3. 700a7538: ee090fbc     	mcr	p15, #0x0, r0, c9, c12, #0x5
+  4. 700a753c: e12fff1e     	bx	lr
+
+Sync: Idx:65342; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A761C ~[0x1C];
+
+P_HDR Event: Idx:65344 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a761c: ee190f5d     	mrc	p15, #0x0, r0, c9, c13, #0x2
+  2. 700a7620: ea000000     	b	0x700a7628 <armR5PmuReadCntr_00> @ imm = #0x0
+  3. 700a7628: e49de004     	ldr	lr, [sp], #4
+  4. 700a762c: e12fff1e     	bx	lr
+
+Sync: Idx:65345; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700ADE02 ~[0x700ADE02]; ISA=Thumb2;
+
+P_HDR Event: Idx:65350 (Pattern: EEEEEEEEEEEEEN, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700ade02: 9901         	ldr	r1, [sp, #0x4]
+  2. 700ade04: 9a04         	ldr	r2, [sp, #0x10]
+  3. 700ade06: eb02 0242    	add.w	r2, r2, r2, lsl #1
+  4. 700ade0a: eb01 0182    	add.w	r1, r1, r2, lsl #2
+  5. 700ade0e: 6088         	str	r0, [r1, #0x8]
+  6. 700ade10: e7ff         	b	0x700ade12 <PMU_profileStart+0x82> @ imm = #-0x2
+  7. 700ade12: 9804         	ldr	r0, [sp, #0x10]
+  8. 700ade14: 3001         	adds	r0, #0x1
+  9. 700ade16: 9004         	str	r0, [sp, #0x10]
+  10. 700ade18: e7eb         	b	0x700addf2 <PMU_profileStart+0x62> @ imm = #-0x2a
+  11. 700addf2: 9804         	ldr	r0, [sp, #0x10]
+  12. 700addf4: 9903         	ldr	r1, [sp, #0xc]
+  13. 700addf6: 4288         	cmp	r0, r1
+  14. 700addf8: d20f         	bhs	0x700ade1a <PMU_profileStart+0x8a> @ imm = #0x1e
+
+P_HDR Event: Idx:65351 (Pattern: EEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700addfa: e7ff         	b	0x700addfc <PMU_profileStart+0x6c> @ imm = #-0x2
+  2. 700addfc: 9804         	ldr	r0, [sp, #0x10]
+  3. 700addfe: f7f9 ec06    	blx	0x700a760c <CSL_armR5PmuReadCntr> @ imm = #-0x67f4
+
+Sync: Idx:65352; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A760C ~[0x700A760C]; ISA=ARM(32);
+
+P_HDR Event: Idx:65357 (Pattern: EEN, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a760c: e52de004     	str	lr, [sp, #-0x4]!
+  2. 700a7610: e350001f     	cmp	r0, #31
+  3. 700a7614: 0a000002     	beq	0x700a7624 <armR5PmuReadCntr_cycles> @ imm = #0x8
+
+P_HDR Event: Idx:65358 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a7618: ebffffc5     	bl	0x700a7534 <CSL_armR5PmuSelectCntr> @ imm = #-0xec
+  2. 700a7534: e200001f     	and	r0, r0, #31
+  3. 700a7538: ee090fbc     	mcr	p15, #0x0, r0, c9, c12, #0x5
+  4. 700a753c: e12fff1e     	bx	lr
+
+Sync: Idx:65360; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A761C ~[0x1C];
+
+P_HDR Event: Idx:65361 (Pattern: EEEE, Function: CSL_armR5PmuReadCntr)
+Executed Assembly Steps:
+  1. 700a761c: ee190f5d     	mrc	p15, #0x0, r0, c9, c13, #0x2
+  2. 700a7620: ea000000     	b	0x700a7628 <armR5PmuReadCntr_00> @ imm = #0x0
+  3. 700a7628: e49de004     	ldr	lr, [sp], #4
+  4. 700a762c: e12fff1e     	bx	lr
+
+Sync: Idx:65362; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700ADE02 ~[0x700ADE02]; ISA=Thumb2;
+
+P_HDR Event: Idx:65367 (Pattern: EEEEEEEEEEEEEEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700ade02: 9901         	ldr	r1, [sp, #0x4]
+  2. 700ade04: 9a04         	ldr	r2, [sp, #0x10]
+  3. 700ade06: eb02 0242    	add.w	r2, r2, r2, lsl #1
+  4. 700ade0a: eb01 0182    	add.w	r1, r1, r2, lsl #2
+  5. 700ade0e: 6088         	str	r0, [r1, #0x8]
+  6. 700ade10: e7ff         	b	0x700ade12 <PMU_profileStart+0x82> @ imm = #-0x2
+  7. 700ade12: 9804         	ldr	r0, [sp, #0x10]
+  8. 700ade14: 3001         	adds	r0, #0x1
+  9. 700ade16: 9004         	str	r0, [sp, #0x10]
+  10. 700ade18: e7eb         	b	0x700addf2 <PMU_profileStart+0x62> @ imm = #-0x2a
+  11. 700addf2: 9804         	ldr	r0, [sp, #0x10]
+  12. 700addf4: 9903         	ldr	r1, [sp, #0xc]
+  13. 700addf6: 4288         	cmp	r0, r1
+  14. 700addf8: d20f         	bhs	0x700ade1a <PMU_profileStart+0x8a> @ imm = #0x1e
+  15. 700ade1a: 2000         	movs	r0, #0x0
+
+P_HDR Event: Idx:65368 (Pattern: EEEEE, Function: PMU_profileStart)
+Executed Assembly Steps:
+  1. 700ade1c: 9007         	str	r0, [sp, #0x1c]
+  2. 700ade1e: e7ff         	b	0x700ade20 <PMU_profileStart+0x90> @ imm = #-0x2
+  3. 700ade20: 9807         	ldr	r0, [sp, #0x1c]
+  4. 700ade22: b008         	add	sp, #0x20
+  5. 700ade24: bd80         	pop	{r7, pc}
+
+Sync: Idx:65369; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2D14 ~[0xB2D14];
+
+P_HDR Event: Idx:65372 (Pattern: EEEEEEEEEEEE, Function: writer_task2)
+Executed Assembly Steps:
+  1. 700b2d14: 2001         	movs	r0, #0x1
+  2. 700b2d16: f000 fbfb    	bl	0x700b3510 <tm_semaphore_put> @ imm = #0x7f6
+  3. 700b3510: b580         	push	{r7, lr}
+  4. 700b3512: f64a 0180    	movw	r1, #0xa880
+  5. 700b3516: ebc0 00c0    	rsb	r0, r0, r0, lsl #3
+  6. 700b351a: f2c7 0108    	movt	r1, #0x7008
+  7. 700b351e: eb01 0080    	add.w	r0, r1, r0, lsl #2
+  8. 700b3522: f7fb fb0d    	bl	0x700aeb40 <_tx_semaphore_put> @ imm = #-0x49e6
+  9. 700aeb40: b580         	push	{r7, lr}
+  10. 700aeb42: b086         	sub	sp, #0x18
+  11. 700aeb44: 9005         	str	r0, [sp, #0x14]
+  12. 700aeb46: f7f1 ea66    	blx	0x700a0014 <_tx_thread_interrupt_disable> @ imm = #-0xeb34
+
+Sync: Idx:65373; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A0014 ~[0x700A0014]; ISA=ARM(32);
+
+P_HDR Event: Idx:65379 (Pattern: EEE, Function: _tx_thread_interrupt_disable)
+Executed Assembly Steps:
+  1. 700a0014: e10f0000     	mrs	r0, apsr
+  2. 700a0018: f10c0080     	cpsid	i
+  3. 700a001c: e12fff1e     	bx	lr
+
+Sync: Idx:65380; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AEB4A ~[0x700AEB4A]; ISA=Thumb2;
+
+P_HDR Event: Idx:65385 (Pattern: EEEEEEEEEEEEEN, Function: _tx_semaphore_put)
+Executed Assembly Steps:
+  1. 700aeb4a: 9004         	str	r0, [sp, #0x10]
+  2. 700aeb4c: 9805         	ldr	r0, [sp, #0x14]
+  3. 700aeb4e: 6900         	ldr	r0, [r0, #0x10]
+  4. 700aeb50: 9002         	str	r0, [sp, #0x8]
+  5. 700aeb52: 9802         	ldr	r0, [sp, #0x8]
+  6. 700aeb54: b940         	cbnz	r0, 0x700aeb68 <_tx_semaphore_put+0x28> @ imm = #0x10
+  7. 700aeb68: 9805         	ldr	r0, [sp, #0x14]
+  8. 700aeb6a: 68c0         	ldr	r0, [r0, #0xc]
+  9. 700aeb6c: 9003         	str	r0, [sp, #0xc]
+  10. 700aeb6e: 9802         	ldr	r0, [sp, #0x8]
+  11. 700aeb70: 3801         	subs	r0, #0x1
+  12. 700aeb72: 9002         	str	r0, [sp, #0x8]
+  13. 700aeb74: 9802         	ldr	r0, [sp, #0x8]
+  14. 700aeb76: b920         	cbnz	r0, 0x700aeb82 <_tx_semaphore_put+0x42> @ imm = #0x8
+
+P_HDR Event: Idx:65386 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_semaphore_put)
+Executed Assembly Steps:
+  1. 700aeb78: e7ff         	b	0x700aeb7a <_tx_semaphore_put+0x3a> @ imm = #-0x2
+  2. 700aeb7a: 9905         	ldr	r1, [sp, #0x14]
+  3. 700aeb7c: 2000         	movs	r0, #0x0
+  4. 700aeb7e: 60c8         	str	r0, [r1, #0xc]
+  5. 700aeb80: e00f         	b	0x700aeba2 <_tx_semaphore_put+0x62> @ imm = #0x1e
+  6. 700aeba2: 9802         	ldr	r0, [sp, #0x8]
+  7. 700aeba4: 9905         	ldr	r1, [sp, #0x14]
+  8. 700aeba6: 6108         	str	r0, [r1, #0x10]
+  9. 700aeba8: 9903         	ldr	r1, [sp, #0xc]
+  10. 700aebaa: 2000         	movs	r0, #0x0
+  11. 700aebac: 66c8         	str	r0, [r1, #0x6c]
+  12. 700aebae: 9903         	ldr	r1, [sp, #0xc]
+  13. 700aebb0: f8c1 0088    	str.w	r0, [r1, #0x88]
+  14. 700aebb4: 9803         	ldr	r0, [sp, #0xc]
+  15. 700aebb6: f7f7 fb73    	bl	0x700a62a0 <_tx_thread_system_ni_resume> @ imm = #-0x891a
+
+P_HDR Event: Idx:65387 (Pattern: EEEEEEEEEN, Function: _tx_thread_system_ni_resume)
+Executed Assembly Steps:
+  1. 700a62a0: b580         	push	{r7, lr}
+  2. 700a62a2: b088         	sub	sp, #0x20
+  3. 700a62a4: 9007         	str	r0, [sp, #0x1c]
+  4. 700a62a6: 9807         	ldr	r0, [sp, #0x1c]
+  5. 700a62a8: 6e80         	ldr	r0, [r0, #0x68]
+  6. 700a62aa: b128         	cbz	r0, 0x700a62b8 <_tx_thread_system_ni_resume+0x18> @ imm = #0xa
+  7. 700a62b8: 9807         	ldr	r0, [sp, #0x1c]
+  8. 700a62ba: 6b40         	ldr	r0, [r0, #0x34]
+  9. 700a62bc: 2800         	cmp	r0, #0x0
+  10. 700a62be: f000 808c    	beq.w	0x700a63da <_tx_thread_system_ni_resume+0x13a> @ imm = #0x118
+
+P_HDR Event: Idx:65388 (Pattern: EEEEN, Function: _tx_thread_system_ni_resume)
+Executed Assembly Steps:
+  1. 700a62c2: e7ff         	b	0x700a62c4 <_tx_thread_system_ni_resume+0x24> @ imm = #-0x2
+  2. 700a62c4: 9807         	ldr	r0, [sp, #0x1c]
+  3. 700a62c6: 6b80         	ldr	r0, [r0, #0x38]
+  4. 700a62c8: 2800         	cmp	r0, #0x0
+  5. 700a62ca: d17e         	bne	0x700a63ca <_tx_thread_system_ni_resume+0x12a> @ imm = #0xfc
+
+P_HDR Event: Idx:65389 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_thread_system_ni_resume)
+Executed Assembly Steps:
+  1. 700a62cc: e7ff         	b	0x700a62ce <_tx_thread_system_ni_resume+0x2e> @ imm = #-0x2
+  2. 700a62ce: 9907         	ldr	r1, [sp, #0x1c]
+  3. 700a62d0: 2000         	movs	r0, #0x0
+  4. 700a62d2: 6348         	str	r0, [r1, #0x34]
+  5. 700a62d4: 9807         	ldr	r0, [sp, #0x1c]
+  6. 700a62d6: 6b00         	ldr	r0, [r0, #0x30]
+  7. 700a62d8: 9006         	str	r0, [sp, #0x18]
+  8. 700a62da: 9906         	ldr	r1, [sp, #0x18]
+  9. 700a62dc: f24a 7004    	movw	r0, #0xa704
+  10. 700a62e0: f2c7 0008    	movt	r0, #0x7008
+  11. 700a62e4: f850 0021    	ldr.w	r0, [r0, r1, lsl #2]
+  12. 700a62e8: 9004         	str	r0, [sp, #0x10]
+  13. 700a62ea: 9804         	ldr	r0, [sp, #0x10]
+  14. 700a62ec: 2800         	cmp	r0, #0x0
+  15. 700a62ee: d15b         	bne	0x700a63a8 <_tx_thread_system_ni_resume+0x108> @ imm = #0xb6
+
+P_HDR Event: Idx:65390 (Pattern: EEEEEEEEEEEEEE, Function: _tx_thread_system_ni_resume)
+Executed Assembly Steps:
+  1. 700a63a8: 9804         	ldr	r0, [sp, #0x10]
+  2. 700a63aa: 6a40         	ldr	r0, [r0, #0x24]
+  3. 700a63ac: 9003         	str	r0, [sp, #0xc]
+  4. 700a63ae: 9807         	ldr	r0, [sp, #0x1c]
+  5. 700a63b0: 9903         	ldr	r1, [sp, #0xc]
+  6. 700a63b2: 6208         	str	r0, [r1, #0x20]
+  7. 700a63b4: 9807         	ldr	r0, [sp, #0x1c]
+  8. 700a63b6: 9904         	ldr	r1, [sp, #0x10]
+  9. 700a63b8: 6248         	str	r0, [r1, #0x24]
+  10. 700a63ba: 9803         	ldr	r0, [sp, #0xc]
+  11. 700a63bc: 9907         	ldr	r1, [sp, #0x1c]
+  12. 700a63be: 6248         	str	r0, [r1, #0x24]
+  13. 700a63c0: 9804         	ldr	r0, [sp, #0x10]
+  14. 700a63c2: 9907         	ldr	r1, [sp, #0x1c]
+
+P_HDR Event: Idx:65392 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_thread_system_ni_resume)
+Executed Assembly Steps:
+  1. 700a63c4: 6208         	str	r0, [r1, #0x20]
+  2. 700a63c6: e7ff         	b	0x700a63c8 <_tx_thread_system_ni_resume+0x128> @ imm = #-0x2
+  3. 700a63c8: e006         	b	0x700a63d8 <_tx_thread_system_ni_resume+0x138> @ imm = #0xc
+  4. 700a63d8: e7ff         	b	0x700a63da <_tx_thread_system_ni_resume+0x13a> @ imm = #-0x2
+  5. 700a63da: f64a 10a4    	movw	r0, #0xa9a4
+  6. 700a63de: f2c7 0008    	movt	r0, #0x7008
+  7. 700a63e2: 6800         	ldr	r0, [r0]
+  8. 700a63e4: 9001         	str	r0, [sp, #0x4]
+  9. 700a63e6: 9801         	ldr	r0, [sp, #0x4]
+  10. 700a63e8: f64a 11a8    	movw	r1, #0xa9a8
+  11. 700a63ec: f2c7 0108    	movt	r1, #0x7008
+  12. 700a63f0: 6809         	ldr	r1, [r1]
+  13. 700a63f2: 4288         	cmp	r0, r1
+  14. 700a63f4: d015         	beq	0x700a6422 <_tx_thread_system_ni_resume+0x182> @ imm = #0x2a
+  15. 700a6422: b008         	add	sp, #0x20
+
+P_HDR Event: Idx:65393 (Pattern: E, Function: _tx_thread_system_ni_resume)
+Executed Assembly Steps:
+  1. 700a6424: bd80         	pop	{r7, pc}
+
+Sync: Idx:65394; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AEBBA ~[0x2BBA];
+
+P_HDR Event: Idx:65396 (Pattern: EE, Function: _tx_semaphore_put)
+Executed Assembly Steps:
+  1. 700aebba: 9804         	ldr	r0, [sp, #0x10]
+  2. 700aebbc: f7f3 e8ba    	blx	0x700a1d34 <_tx_thread_interrupt_restore> @ imm = #-0xce8c
+
+Sync: Idx:65397; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A1D34 ~[0x700A1D34]; ISA=ARM(32);
+
+P_HDR Event: Idx:65402 (Pattern: EE, Function: _tx_thread_interrupt_restore)
+Executed Assembly Steps:
+  1. 700a1d34: e121f000     	msr	CPSR_c, r0
+  2. 700a1d38: e12fff1e     	bx	lr
+
+Sync: Idx:65403; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AEBC0 ~[0x700AEBC0]; ISA=Thumb2;
+
+P_HDR Event: Idx:65409 (Pattern: EEEE, Function: _tx_semaphore_put)
+Executed Assembly Steps:
+  1. 700aebc0: e7ff         	b	0x700aebc2 <_tx_semaphore_put+0x82> @ imm = #-0x2
+  2. 700aebc2: 2000         	movs	r0, #0x0
+  3. 700aebc4: b006         	add	sp, #0x18
+  4. 700aebc6: bd80         	pop	{r7, pc}
+
+Sync: Idx:65410; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B3526 ~[0xB3526];
+
+P_HDR Event: Idx:65415 (Pattern: EEN, Function: tm_semaphore_put)
+Executed Assembly Steps:
+  1. 700b3526: 2800         	cmp	r0, #0x0
+  2. 700b3528: bf18         	it	ne
+  3. 700b352a: 2001         	movne	r0, #0x1
+
+P_HDR Event: Idx:65416 (Pattern: E, Function: tm_semaphore_put)
+Executed Assembly Steps:
+  1. 700b352c: bd80         	pop	{r7, pc}
+
+Sync: Idx:65417; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2D1A ~[0x2D1A];
+
+P_HDR Event: Idx:65419 (Pattern: EEEEEEEEEEEEEEE, Function: writer_task2)
+Executed Assembly Steps:
+  1. 700b2d1a: e7f1         	b	0x700b2d00 <writer_task2+0x10> @ imm = #-0x1e
+  2. 700b2d00: f04f 0002    	mov.w	r0, #0x2
+  3. 700b2d04: f000 fb1c    	bl	0x700b3340 <tm_semaphore_wait> @ imm = #0x638
+  4. 700b3340: b580         	push	{r7, lr}
+  5. 700b3342: f64a 0180    	movw	r1, #0xa880
+  6. 700b3346: ebc0 00c0    	rsb	r0, r0, r0, lsl #3
+  7. 700b334a: f2c7 0108    	movt	r1, #0x7008
+  8. 700b334e: eb01 0080    	add.w	r0, r1, r0, lsl #2
+  9. 700b3352: f04f 31ff    	mov.w	r1, #0xffffffff
+  10. 700b3356: f7f7 fcf3    	bl	0x700aad40 <_tx_semaphore_get> @ imm = #-0x861a
+  11. 700aad40: b580         	push	{r7, lr}
+  12. 700aad42: b088         	sub	sp, #0x20
+  13. 700aad44: 9007         	str	r0, [sp, #0x1c]
+  14. 700aad46: 9106         	str	r1, [sp, #0x18]
+  15. 700aad48: 2000         	movs	r0, #0x0
+
+P_HDR Event: Idx:65420 (Pattern: EE, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aad4a: 9001         	str	r0, [sp, #0x4]
+  2. 700aad4c: f7f5 e962    	blx	0x700a0014 <_tx_thread_interrupt_disable> @ imm = #-0xad3c
+
+Sync: Idx:65421; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A0014 ~[0x700A0014]; ISA=ARM(32);
+
+P_HDR Event: Idx:65428 (Pattern: EEE, Function: _tx_thread_interrupt_disable)
+Executed Assembly Steps:
+  1. 700a0014: e10f0000     	mrs	r0, apsr
+  2. 700a0018: f10c0080     	cpsid	i
+  3. 700a001c: e12fff1e     	bx	lr
+
+Sync: Idx:65429; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AAD50 ~[0x700AAD50]; ISA=Thumb2;
+
+P_HDR Event: Idx:65434 (Pattern: EEEEEEN, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aad50: 9005         	str	r0, [sp, #0x14]
+  2. 700aad52: 9807         	ldr	r0, [sp, #0x1c]
+  3. 700aad54: 6880         	ldr	r0, [r0, #0x8]
+  4. 700aad56: b140         	cbz	r0, 0x700aad6a <_tx_semaphore_get+0x2a> @ imm = #0x10
+  5. 700aad6a: 9806         	ldr	r0, [sp, #0x18]
+  6. 700aad6c: 2800         	cmp	r0, #0x0
+  7. 700aad6e: d04f         	beq	0x700aae10 <_tx_semaphore_get+0xd0> @ imm = #0x9e
+
+P_HDR Event: Idx:65435 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aad70: e7ff         	b	0x700aad72 <_tx_semaphore_get+0x32> @ imm = #-0x2
+  2. 700aad72: f64a 10b4    	movw	r0, #0xa9b4
+  3. 700aad76: f2c7 0008    	movt	r0, #0x7008
+  4. 700aad7a: 6800         	ldr	r0, [r0]
+  5. 700aad7c: b130         	cbz	r0, 0x700aad8c <_tx_semaphore_get+0x4c> @ imm = #0xc
+  6. 700aad8c: f64a 10a4    	movw	r0, #0xa9a4
+  7. 700aad90: f2c7 0008    	movt	r0, #0x7008
+  8. 700aad94: 6800         	ldr	r0, [r0]
+  9. 700aad96: 9004         	str	r0, [sp, #0x10]
+  10. 700aad98: 9904         	ldr	r1, [sp, #0x10]
+  11. 700aad9a: f24f 4041    	movw	r0, #0xf441
+  12. 700aad9e: f2c7 000a    	movt	r0, #0x700a
+  13. 700aada2: 66c8         	str	r0, [r1, #0x6c]
+  14. 700aada4: 9807         	ldr	r0, [sp, #0x1c]
+  15. 700aada6: 9904         	ldr	r1, [sp, #0x10]
+
+P_HDR Event: Idx:65436 (Pattern: EEEN, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aada8: 6708         	str	r0, [r1, #0x70]
+  2. 700aadaa: 9807         	ldr	r0, [sp, #0x1c]
+  3. 700aadac: 6900         	ldr	r0, [r0, #0x10]
+  4. 700aadae: b940         	cbnz	r0, 0x700aadc2 <_tx_semaphore_get+0x82> @ imm = #0x10
+
+P_HDR Event: Idx:65437 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aadb0: e7ff         	b	0x700aadb2 <_tx_semaphore_get+0x72> @ imm = #-0x2
+  2. 700aadb2: 9804         	ldr	r0, [sp, #0x10]
+  3. 700aadb4: 9907         	ldr	r1, [sp, #0x1c]
+  4. 700aadb6: 60c8         	str	r0, [r1, #0xc]
+  5. 700aadb8: 9804         	ldr	r0, [sp, #0x10]
+  6. 700aadba: 6740         	str	r0, [r0, #0x74]
+  7. 700aadbc: 9804         	ldr	r0, [sp, #0x10]
+  8. 700aadbe: 6780         	str	r0, [r0, #0x78]
+  9. 700aadc0: e012         	b	0x700aade8 <_tx_semaphore_get+0xa8> @ imm = #0x24
+  10. 700aade8: 9907         	ldr	r1, [sp, #0x1c]
+  11. 700aadea: 6908         	ldr	r0, [r1, #0x10]
+  12. 700aadec: 3001         	adds	r0, #0x1
+  13. 700aadee: 6108         	str	r0, [r1, #0x10]
+  14. 700aadf0: 9904         	ldr	r1, [sp, #0x10]
+  15. 700aadf2: 2006         	movs	r0, #0x6
+
+P_HDR Event: Idx:65438 (Pattern: EEEEEEEEEEEEEE, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aadf4: 6348         	str	r0, [r1, #0x34]
+  2. 700aadf6: 9804         	ldr	r0, [sp, #0x10]
+  3. 700aadf8: 9906         	ldr	r1, [sp, #0x18]
+  4. 700aadfa: f7f7 f921    	bl	0x700a2040 <_tx_thread_system_ni_suspend> @ imm = #-0x8dbe
+  5. 700a2040: b580         	push	{r7, lr}
+  6. 700a2042: b08a         	sub	sp, #0x28
+  7. 700a2044: 9009         	str	r0, [sp, #0x24]
+  8. 700a2046: 9108         	str	r1, [sp, #0x20]
+  9. 700a2048: f64a 10a4    	movw	r0, #0xa9a4
+  10. 700a204c: f2c7 0008    	movt	r0, #0x7008
+  11. 700a2050: 6800         	ldr	r0, [r0]
+  12. 700a2052: 9000         	str	r0, [sp]
+  13. 700a2054: 9809         	ldr	r0, [sp, #0x24]
+  14. 700a2056: 9900         	ldr	r1, [sp]
+
+P_HDR Event: Idx:65440 (Pattern: EN, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a2058: 4288         	cmp	r0, r1
+  2. 700a205a: d118         	bne	0x700a208e <_tx_thread_system_ni_suspend+0x4e> @ imm = #0x30
+
+P_HDR Event: Idx:65441 (Pattern: EEN, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a205c: e7ff         	b	0x700a205e <_tx_thread_system_ni_suspend+0x1e> @ imm = #-0x2
+  2. 700a205e: 9808         	ldr	r0, [sp, #0x20]
+  3. 700a2060: b168         	cbz	r0, 0x700a207e <_tx_thread_system_ni_suspend+0x3e> @ imm = #0x1a
+
+P_HDR Event: Idx:65442 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a2062: e7ff         	b	0x700a2064 <_tx_thread_system_ni_suspend+0x24> @ imm = #-0x2
+  2. 700a2064: 9808         	ldr	r0, [sp, #0x20]
+  3. 700a2066: 3001         	adds	r0, #0x1
+  4. 700a2068: b140         	cbz	r0, 0x700a207c <_tx_thread_system_ni_suspend+0x3c> @ imm = #0x10
+  5. 700a207c: e7ff         	b	0x700a207e <_tx_thread_system_ni_suspend+0x3e> @ imm = #-0x2
+  6. 700a207e: 9809         	ldr	r0, [sp, #0x24]
+  7. 700a2080: 69c0         	ldr	r0, [r0, #0x1c]
+  8. 700a2082: f64a 11dc    	movw	r1, #0xa9dc
+  9. 700a2086: f2c7 0108    	movt	r1, #0x7008
+  10. 700a208a: 6008         	str	r0, [r1]
+  11. 700a208c: e7ff         	b	0x700a208e <_tx_thread_system_ni_suspend+0x4e> @ imm = #-0x2
+  12. 700a208e: 9809         	ldr	r0, [sp, #0x24]
+  13. 700a2090: 6b00         	ldr	r0, [r0, #0x30]
+  14. 700a2092: 9007         	str	r0, [sp, #0x1c]
+  15. 700a2094: 9809         	ldr	r0, [sp, #0x24]
+
+P_HDR Event: Idx:65443 (Pattern: EEEEEN, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a2096: 6a00         	ldr	r0, [r0, #0x20]
+  2. 700a2098: 9002         	str	r0, [sp, #0x8]
+  3. 700a209a: 9802         	ldr	r0, [sp, #0x8]
+  4. 700a209c: 9909         	ldr	r1, [sp, #0x24]
+  5. 700a209e: 4288         	cmp	r0, r1
+  6. 700a20a0: d01e         	beq	0x700a20e0 <_tx_thread_system_ni_suspend+0xa0> @ imm = #0x3c
+
+P_HDR Event: Idx:65444 (Pattern: EEEEEEEEEEEEEEE, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a20a2: e7ff         	b	0x700a20a4 <_tx_thread_system_ni_suspend+0x64> @ imm = #-0x2
+  2. 700a20a4: 9809         	ldr	r0, [sp, #0x24]
+  3. 700a20a6: 6a40         	ldr	r0, [r0, #0x24]
+  4. 700a20a8: 9001         	str	r0, [sp, #0x4]
+  5. 700a20aa: 9801         	ldr	r0, [sp, #0x4]
+  6. 700a20ac: 9902         	ldr	r1, [sp, #0x8]
+  7. 700a20ae: 6248         	str	r0, [r1, #0x24]
+  8. 700a20b0: 9802         	ldr	r0, [sp, #0x8]
+  9. 700a20b2: 9901         	ldr	r1, [sp, #0x4]
+  10. 700a20b4: 6208         	str	r0, [r1, #0x20]
+  11. 700a20b6: 9907         	ldr	r1, [sp, #0x1c]
+  12. 700a20b8: f24a 7004    	movw	r0, #0xa704
+  13. 700a20bc: f2c7 0008    	movt	r0, #0x7008
+  14. 700a20c0: f850 0021    	ldr.w	r0, [r0, r1, lsl #2]
+  15. 700a20c4: 9909         	ldr	r1, [sp, #0x24]
+
+P_HDR Event: Idx:65445 (Pattern: EN, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a20c6: 4288         	cmp	r0, r1
+  2. 700a20c8: d109         	bne	0x700a20de <_tx_thread_system_ni_suspend+0x9e> @ imm = #0x12
+
+P_HDR Event: Idx:65446 (Pattern: EEEEEEEEEEEEEN, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a20ca: e7ff         	b	0x700a20cc <_tx_thread_system_ni_suspend+0x8c> @ imm = #-0x2
+  2. 700a20cc: 9802         	ldr	r0, [sp, #0x8]
+  3. 700a20ce: 9a07         	ldr	r2, [sp, #0x1c]
+  4. 700a20d0: f24a 7104    	movw	r1, #0xa704
+  5. 700a20d4: f2c7 0108    	movt	r1, #0x7008
+  6. 700a20d8: f841 0022    	str.w	r0, [r1, r2, lsl #2]
+  7. 700a20dc: e7ff         	b	0x700a20de <_tx_thread_system_ni_suspend+0x9e> @ imm = #-0x2
+  8. 700a20de: e0d1         	b	0x700a2284 <_tx_thread_system_ni_suspend+0x244> @ imm = #0x1a2
+  9. 700a2284: 9809         	ldr	r0, [sp, #0x24]
+  10. 700a2286: f64a 11a8    	movw	r1, #0xa9a8
+  11. 700a228a: f2c7 0108    	movt	r1, #0x7008
+  12. 700a228e: 6809         	ldr	r1, [r1]
+  13. 700a2290: 4288         	cmp	r0, r1
+  14. 700a2292: d125         	bne	0x700a22e0 <_tx_thread_system_ni_suspend+0x2a0> @ imm = #0x4a
+
+P_HDR Event: Idx:65447 (Pattern: EEEEEEEEEEEEEE, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a2294: e7ff         	b	0x700a2296 <_tx_thread_system_ni_suspend+0x256> @ imm = #-0x2
+  2. 700a2296: f64a 10ac    	movw	r0, #0xa9ac
+  3. 700a229a: f2c7 0008    	movt	r0, #0x7008
+  4. 700a229e: 6801         	ldr	r1, [r0]
+  5. 700a22a0: f24a 7004    	movw	r0, #0xa704
+  6. 700a22a4: f2c7 0008    	movt	r0, #0x7008
+  7. 700a22a8: f850 0021    	ldr.w	r0, [r0, r1, lsl #2]
+  8. 700a22ac: f64a 11a8    	movw	r1, #0xa9a8
+  9. 700a22b0: f2c7 0108    	movt	r1, #0x7008
+  10. 700a22b4: 6008         	str	r0, [r1]
+  11. 700a22b6: f64a 10b4    	movw	r0, #0xa9b4
+  12. 700a22ba: f2c7 0008    	movt	r0, #0x7008
+  13. 700a22be: 6800         	ldr	r0, [r0]
+  14. 700a22c0: 9003         	str	r0, [sp, #0xc]
+
+P_HDR Event: Idx:65448 (Pattern: EEEEEEEN, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a22c2: 9803         	ldr	r0, [sp, #0xc]
+  2. 700a22c4: f646 1184    	movw	r1, #0x6984
+  3. 700a22c8: f2c7 010b    	movt	r1, #0x700b
+  4. 700a22cc: 6809         	ldr	r1, [r1]
+  5. 700a22ce: 4308         	orrs	r0, r1
+  6. 700a22d0: 9003         	str	r0, [sp, #0xc]
+  7. 700a22d2: 9803         	ldr	r0, [sp, #0xc]
+  8. 700a22d4: b918         	cbnz	r0, 0x700a22de <_tx_thread_system_ni_suspend+0x29e> @ imm = #0x6
+
+P_HDR Event: Idx:65449 (Pattern: EE, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a22d6: e7ff         	b	0x700a22d8 <_tx_thread_system_ni_suspend+0x298> @ imm = #-0x2
+  2. 700a22d8: f00e ef46    	blx	0x700b1168 <_tx_thread_system_return> @ imm = #0xee8c
+
+Sync: Idx:65450; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B1168 ~[0x700B1168]; ISA=ARM(32);
+
+P_HDR Event: Idx:65456 (Pattern: EEEEEEEEEEEEEE, Function: _tx_thread_system_return)
+Executed Assembly Steps:
+  1. 700b1168: e10f1000     	mrs	r1, apsr
+  2. 700b116c: f10c0080     	cpsid	i
+  3. 700b1170: e92d4ff0     	push	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
+  4. 700b1174: e59f503c     	ldr	r5, [pc, #0x3c]         @ 0x700b11b8 <__tx_thread_dont_save_ts+0x8>
+  5. 700b1178: e5956000     	ldr	r6, [r5]
+  6. 700b117c: eef14a10     	vmrs	r4, fpscr
+  7. 700b1180: e52d4004     	str	r4, [sp, #-0x4]!
+  8. 700b1184: ed2d0b20     	vpush	{d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15}
+  9. 700b1188: e3a00000     	mov	r0, #0
+  10. 700b118c: e92d0003     	push	{r0, r1}
+  11. 700b1190: e59f2024     	ldr	r2, [pc, #0x24]         @ 0x700b11bc <__tx_thread_dont_save_ts+0xc>
+  12. 700b1194: e5921000     	ldr	r1, [r2]
+  13. 700b1198: e586d008     	str	sp, [r6, #0x8]
+  14. 700b119c: e3a04000     	mov	r4, #0
+
+P_HDR Event: Idx:65457 (Pattern: EEEEEEEEN, Function: _tx_thread_system_return)
+Executed Assembly Steps:
+  1. 700b11a0: e3510000     	cmp	r1, #0
+  2. 700b11a4: 0a000001     	beq	0x700b11b0 <__tx_thread_dont_save_ts> @ imm = #0x4
+  3. 700b11b0: e5854000     	str	r4, [r5]
+  4. 700b11b4: eafff712     	b	0x700aee04 <_tx_thread_schedule> @ imm = #-0x23b8
+  5. 700aee04: f1080080     	cpsie	i
+  6. 700aee08: e59f106c     	ldr	r1, [pc, #0x6c]         @ 0x700aee7c <_tx_solicited_return+0x1c>
+  7. 700aee0c: e5910000     	ldr	r0, [r1]
+  8. 700aee10: e3500000     	cmp	r0, #0
+  9. 700aee14: 0afffffc     	beq	0x700aee0c <__tx_thread_schedule_loop> @ imm = #-0x10
+
+P_HDR Event: Idx:65458 (Pattern: EEEEEEEEEEEEEEE, Function: __tx_thread_schedule_loop)
+Executed Assembly Steps:
+  1. 700aee18: f10c0080     	cpsid	i
+  2. 700aee1c: e59f105c     	ldr	r1, [pc, #0x5c]         @ 0x700aee80 <_tx_solicited_return+0x20>
+  3. 700aee20: e5810000     	str	r0, [r1]
+  4. 700aee24: e5902004     	ldr	r2, [r0, #0x4]
+  5. 700aee28: e5903018     	ldr	r3, [r0, #0x18]
+  6. 700aee2c: e2822001     	add	r2, r2, #1
+  7. 700aee30: e5802004     	str	r2, [r0, #0x4]
+  8. 700aee34: e59f2048     	ldr	r2, [pc, #0x48]         @ 0x700aee84 <_tx_solicited_return+0x24>
+  9. 700aee38: e590d008     	ldr	sp, [r0, #0x8]
+  10. 700aee3c: e5823000     	str	r3, [r2]
+  11. 700aee40: e8bd0010     	ldm	sp!, {r4}
+  12. 700aee44: e3540000     	cmp	r4, #0
+  13. 700aee48: 0a000004     	beq	0x700aee60 <_tx_solicited_return> @ imm = #0x10
+  14. 700aee60: e8bd0001     	ldm	sp!, {r0}
+  15. 700aee64: ecbd0b20     	vpop	{d0, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15}
+
+P_HDR Event: Idx:65459 (Pattern: EEEEE, Function: _tx_solicited_return)
+Executed Assembly Steps:
+  1. 700aee68: e49d4004     	ldr	r4, [sp], #4
+  2. 700aee6c: eee14a10     	vmsr	fpscr, r4
+  3. 700aee70: e8bd4ff0     	pop	{r4, r5, r6, r7, r8, r9, r10, r11, lr}
+  4. 700aee74: e12ff000     	msr	CPSR_fsxc, r0
+  5. 700aee78: e12fff1e     	bx	lr
+
+Sync: Idx:65460; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A22DC ~[0x700A22DC]; ISA=Thumb2;
+
+P_HDR Event: Idx:65465 (Pattern: EEEE, Function: _tx_thread_system_ni_suspend)
+Executed Assembly Steps:
+  1. 700a22dc: e7ff         	b	0x700a22de <_tx_thread_system_ni_suspend+0x29e> @ imm = #-0x2
+  2. 700a22de: e01e         	b	0x700a231e <_tx_thread_system_ni_suspend+0x2de> @ imm = #0x3c
+  3. 700a231e: b00a         	add	sp, #0x28
+  4. 700a2320: bd80         	pop	{r7, pc}
+
+Sync: Idx:65466; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AADFE ~[0xAADFE];
+
+P_HDR Event: Idx:65469 (Pattern: EE, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aadfe: 9805         	ldr	r0, [sp, #0x14]
+  2. 700aae00: f7f6 ef98    	blx	0x700a1d34 <_tx_thread_interrupt_restore> @ imm = #-0x90d0
+
+Sync: Idx:65470; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700A1D34 ~[0x700A1D34]; ISA=ARM(32);
+
+P_HDR Event: Idx:65476 (Pattern: EE, Function: _tx_thread_interrupt_restore)
+Executed Assembly Steps:
+  1. 700a1d34: e121f000     	msr	CPSR_c, r0
+  2. 700a1d38: e12fff1e     	bx	lr
+
+Sync: Idx:65477; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700AAE04 ~[0x700AAE04]; ISA=Thumb2;
+
+P_HDR Event: Idx:65482 (Pattern: EEEEEEEEE, Function: _tx_semaphore_get)
+Executed Assembly Steps:
+  1. 700aae04: 9804         	ldr	r0, [sp, #0x10]
+  2. 700aae06: f8d0 0088    	ldr.w	r0, [r0, #0x88]
+  3. 700aae0a: 9001         	str	r0, [sp, #0x4]
+  4. 700aae0c: e7ff         	b	0x700aae0e <_tx_semaphore_get+0xce> @ imm = #-0x2
+  5. 700aae0e: e005         	b	0x700aae1c <_tx_semaphore_get+0xdc> @ imm = #0xa
+  6. 700aae1c: e7ff         	b	0x700aae1e <_tx_semaphore_get+0xde> @ imm = #-0x2
+  7. 700aae1e: 9801         	ldr	r0, [sp, #0x4]
+  8. 700aae20: b008         	add	sp, #0x20
+  9. 700aae22: bd80         	pop	{r7, pc}
+
+Sync: Idx:65483; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B335A ~[0xB335A];
+
+P_HDR Event: Idx:65486 (Pattern: EEN, Function: tm_semaphore_wait)
+Executed Assembly Steps:
+  1. 700b335a: 2800         	cmp	r0, #0x0
+  2. 700b335c: bf18         	it	ne
+  3. 700b335e: 2001         	movne	r0, #0x1
+
+P_HDR Event: Idx:65488 (Pattern: E, Function: tm_semaphore_wait)
+Executed Assembly Steps:
+  1. 700b3360: bd80         	pop	{r7, pc}
+
+Sync: Idx:65489; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2CD8 ~[0x2CD8];
+
+P_HDR Event: Idx:65491 (Pattern: E, Function: writer_task1)
+Executed Assembly Steps:
+  1. 700b2cd8: 4620         	mov	r0, r4
+
+Sync: Idx:65492; ID:10;	BRANCH_ADDRESS : Branch address.; Addr=0x700B2CD8 ~[0x700B2CD8]; S; Exception=Debug Halt; ; Cancel prev instr
+
