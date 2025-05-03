@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Copyright (c) 2024 IBV - Echtzeit- und Embedded GmbH & Co. KG
+Copyright (c) Marco Milenkovic 2024 IBV - Echtzeit- und Embedded GmbH & Co. KG
 SPDX-License-Identifier: Apache-2.0
 
 PROJECT: MASTER THESIS
@@ -9,6 +9,7 @@ CONTENTS:
 This script parses a disassembly file and a decoded (OpenCSD) trace file from a
 Croesight trace, and maps trace events onto disassembled instructions via a
 state-machine simulation.
+This file is written with the help of AI Tools like github-copilot and chatgpt.
 
 The disassembly parser uses a strict “whitelist” approach - only lines matching
 

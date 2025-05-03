@@ -1,3 +1,7 @@
+"""
+Copyright (c) Marco Milenkovic 2024 IBV - Echtzeit- und Embedded GmbH & Co. KG
+SPDX-License-Identifier: Apache-2.0
+"""
 import re
 import argparse
 
