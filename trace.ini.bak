@@ -3,7 +3,7 @@ buffers=buffer0
 
 [buffer0]
 name=ETB_0
-file=files/threadx.data
+file=files/freertos.data
 format=coresight
 
 [source_buffers]
