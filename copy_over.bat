@@ -4,10 +4,10 @@ REM rename certain .out files to a shorter name (suppressing the original),
 REM and finally copy E:\tbr.data to the destination folder.
 REM Usage: Run the script from the command line or double-click it.
 
-REM Set the source root (adjust if needed)
+REM Set the source root (most commonly the CCS working folder)
 set "SOURCE=C:\Users\ibv-user\workspace_v12"
-REM Set the destination folder
-set "DEST=E:\IBV\PROJEKTE\MASTER_ARBEIT\WORKSPACE\Traces\work\files"
+REM Set the destination folder to the current folder:
+set "DEST=%~dp0"
 
 echo Copying .out and .elf files from Debug folders in %SOURCE% to %DEST%
 echo.
