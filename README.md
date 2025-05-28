@@ -130,6 +130,7 @@ Paste the outputs of this into the device_6.ini [regs] section.
      ```bash
      ./run_all.sh freertos
      ```
+     parameters are: freertos, zephyr and threadx
 
    This script:
    - Renames `tbr.data` → `freertos.data`
@@ -137,6 +138,12 @@ Paste the outputs of this into the device_6.ini [regs] section.
    - Runs `/usr/bin/trc_pkt_lister`
    - Produces `.ppl` packet trace
    - Runs `parse_trace.py` and outputs `parsed_trace_freertos.txt`
+
+   ⚠️ Alternativly:
+   - You can just run the parser on its own
+   ```bash
+    python parse_traces.py <disasm_file> <trace_file> > output_file
+   ```
 
    ⚠️ Adjust:
    - `run_all.sh`: Paths to binaries and trace files if your layout differs
