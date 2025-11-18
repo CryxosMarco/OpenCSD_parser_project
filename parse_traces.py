@@ -5,7 +5,7 @@ SPDX-License-Identifier: Apache-2.0
 
 PROJECT: MASTER THESIS
 MODULE: CoreSght-Trace parser
-CONTENTS: 
+CONTENTS:
 This script parses a disassembly file and a decoded (OpenCSD) trace file from a
 Croesight trace, and maps trace events onto disassembled instructions via a
 state-machine simulation.
@@ -66,12 +66,12 @@ class Instruction:
 def parse_disassembly(disasm_file):
     instructions = []
     current_function = ""
-    
+
     # Function label lines, e.g.: 700004e8 <tm_pmu_profile_start>:
     label_pattern = re.compile(r'^([0-9a-f]+)\s+<([^>]+)>:$', re.IGNORECASE)
     # Strict instruction pattern:
-    strict_inst_pattern = re.compile(r'^([0-9a-f]+):\s+([0-9a-f ]+)\s+([A-Za-z].*)$', re.IGNORECASE)
-    
+    strict_inst_pattern = re.compile(r'^\s*([0-9a-f]+):\s+([0-9a-f ]+)\s+([A-Za-z].*)$', re.IGNORECASE)
+
     with smart_open(disasm_file) as f:
         for line in f:
             line = line.rstrip()
